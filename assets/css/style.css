@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: red;
+    display: Flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-container {
+    display: Flex;
+    justify-content: center;
+    align-items: center;
+    background-color: green;
+    height: 30vh;
+    width: 30vw;
+
+}
+
+.menu-btns {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
