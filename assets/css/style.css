@@ -97,6 +97,81 @@ footer {
 .fa-brands:hover {
     color: #fca311;
 }
+
 @media screen and (min-width: 768px) {
-    
+    .game-menu {
+        padding-bottom: 18px;
+    }
+
+    .game-menu .btn {
+        font-size: 20px;
+        width: 85%;
+    }
+
+    header h1 {
+        font-size: 45px;
+    }
+
+    header h2 {
+        font-size: 24px;
+    }
+
+    .menu-header {
+        font-size: 40px;
+    }
+
+    footer {
+        margin-top: 10px;
+    }
+
+    .fa-brands {
+        font-size: 38px;
+
+    }
+
+    h1 i {
+        font-size: 49px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .game-container {
+        width: 70%;
+    }
+
+    .game-menu {
+        padding-bottom: 28px;
+    }
+
+    .game-menu .btn {
+        font-size: 24px;
+        width: 90%;
+    }
+
+    header h1 {
+        font-size: 50px;
+    }
+
+    header h2 {
+        font-size: 28px;
+    }
+
+    .menu-header {
+        font-size: 45px;
+    }
+
+    footer {
+        margin-bottom: 10px;
+        gap: 20px;
+    }
+
+    .fa-brands {
+        font-size: 48px;
+
+    }
+
+    h1 i {
+        font-size: 52px;
+    }
+
 }
