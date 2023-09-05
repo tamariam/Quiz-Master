@@ -5,6 +5,7 @@
     padding: 0;
 } */
 
+/* give styles to body */
 body {
     display: Flex;
     flex-direction: column;
@@ -14,21 +15,20 @@ body {
     font-family: 'Acme', sans-serif;
     font-weight: 400;
     background-color: #ffcdb2;
+    overflow: hidden;
 
 }
 
+/* styling main container, set to to display flex because to center all items */
 .game-container {
     display: Flex;
     justify-content: center;
     align-items: flex-start;
     width: 95vw;
-
     margin-top: 30px;
-
-
-
 }
 
+/* style game-menu div, */
 .game-menu {
     background-color: #fca311;
     width: 100%;
@@ -39,8 +39,10 @@ body {
     align-items: center;
     border-radius: 9px;
     height: 600px;
+    display: none;
 }
 
+/* give style to buttons they all have sam class */
 .game-menu .btn {
     display: block;
     background-color: #001D3D;
@@ -61,7 +63,8 @@ body {
     background-color: #219ebc;
 }
 
-header h1 {
+/* styiling h1 and h2s */
+.main-header {
     font-size: 40px;
     align-items: Center;
     color: #001d3d;
@@ -75,11 +78,13 @@ header h2 {
 
 }
 
+/* this give style to header icon  */
 h1 i {
     color: #6a040f;
     margin-left: 10px;
 }
 
+/* style fotter */
 footer {
     /* margin-top: 10px; */
     padding: 10px 0 10px 0;
@@ -89,6 +94,7 @@ footer {
     gap: 10px;
 }
 
+/* styling linkdin and github icons */
 .fa-brands {
     font-size: 32px;
     color: #001D3D;
@@ -98,9 +104,54 @@ footer {
     color: #fca311;
 }
 
+.color-div {
+
+    width: 95vw;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #001D3D;
+    padding-bottom: 10px;
+
+}
+
+.menu-btn {
+    border: none;
+    padding: 5px 20px;
+    width: 110px;
+    margin-bottom: 30px;
+    border-radius: 9px;
+    background-color: #6a040f;
+    color: #ffffff;
+    font-size: 22px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    cursor: pointer;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+.menu-btn:hover {
+    background-color: #fca311;
+}
+
+.box {
+    width: 120px;
+    height: 120px;
+    border: 5px dotted #ffffff;
+}
+
+.choose-color {
+    color: #ffffff;
+}
+
+/* make site responsive for tablets */
 @media screen and (min-width: 768px) {
     .game-menu {
         padding-bottom: 18px;
+
     }
 
     .game-menu .btn {
@@ -108,7 +159,7 @@ footer {
         width: 85%;
     }
 
-    header h1 {
+    .main-header {
         font-size: 45px;
     }
 
@@ -134,21 +185,24 @@ footer {
     }
 }
 
+/* give responsive sizes  for desktop */
 @media screen and (min-width: 1024px) {
     .game-container {
-        width: 70%;
+        width: 60%;
     }
 
     .game-menu {
         padding-bottom: 28px;
+        border: 3px solid black;
+
     }
 
     .game-menu .btn {
         font-size: 24px;
-        width: 90%;
+
     }
 
-    header h1 {
+    .main-header {
         font-size: 50px;
     }
 
@@ -157,11 +211,11 @@ footer {
     }
 
     .menu-header {
-        font-size: 45px;
+        font-size: 49px;
     }
 
     footer {
-        margin-bottom: 10px;
+        margin-bottom: 25px;
         gap: 20px;
     }
 
