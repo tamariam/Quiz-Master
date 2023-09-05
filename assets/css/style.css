@@ -49,6 +49,10 @@ body {
 
 }
 
+.game-menu .btn:hover {
+    background-color: #219ebc;
+}
+
 header h1 {
     font-size: 40px;
     align-items: Center;
