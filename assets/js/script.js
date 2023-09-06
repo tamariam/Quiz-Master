@@ -5,10 +5,12 @@ let menuBtn = document.querySelector('.menu-btn');
 let mainBoard = document.querySelector('.game-menu');
 let colorBoard = document.querySelector('.color-div');
 let colorOptions = document.querySelector('.color-btn');
-let boxes = document.querySelectorAll('box');
+let boxes = document.querySelectorAll('.box');
 const borderChange = (activeBox) => {
     for (let box of boxes) {
-        activeBox.classList.remove('active');
+        if (box !== activeBox) {
+            box.classList.remove('active');
+        }
     }
     activeBox.classList.add('active');
 };
@@ -25,6 +27,7 @@ boxOne.addEventListener('click', () => {
     mainBoard.style.backgroundColor = ' #fca311';
     document.body.style.backgroundColor = ' #ffcdb2';
     colorBoard.style.backgroundColor = '#fca311';
+    borderChange(boxOne);
     // boxOne.style.border = '2px dotted #ffffff';
 });
 boxTwo.addEventListener('click', () => {
@@ -38,6 +41,7 @@ boxThree.addEventListener('click', () => {
     mainBoard.style.backgroundColor = '#bb3e03';
     document.body.style.backgroundColor = '#ffd670';
     colorBoard.style.backgroundColor = '#bb3e03';
+    borderChange(boxThree);
     // boxThree.style.border = '2px dotted #ffffff';
 });
 
