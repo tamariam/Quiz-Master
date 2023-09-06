@@ -135,7 +135,7 @@ footer {
 }
 
 .menu-btn:hover {
-    background-color: #fca311;
+    background-color: #0a9396;
 }
 
 .box {
@@ -213,6 +213,10 @@ footer {
         font-size: 49px;
     }
 
+    .color-div {
+        gap: 10px;
+    }
+
     .choose-color {
         font-size: 39px;
     }
@@ -220,7 +224,9 @@ footer {
     .menu-btn {
         font-size: 29px;
         text-align: center;
-        padding: 0 12px 9px 12px;
+        width: 130px;
+        padding-bottom: 9px;
+
     }
 }
 
@@ -270,6 +276,7 @@ footer {
     .color-div {
         width: 50vw;
         border: 3px solid black;
+        gap: 15px;
     }
 
     .choose-color {
@@ -279,7 +286,7 @@ footer {
     .menu-btn {
         font-size: 35px;
         text-align: center;
-        padding: 0 12px 9px 12px;
+        width: 140px;
     }
 
 }

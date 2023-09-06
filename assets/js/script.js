@@ -32,7 +32,6 @@ boxOne.addEventListener('click', () => {
     mainBoard.style.backgroundColor = ' #fca311';
     document.body.style.backgroundColor = ' #ffcdb2';
     colorBoard.style.backgroundColor = '#fca311';
-    menuBtn.style.backgroundColor = '#e76f51';
     borderChange(boxOne);
 
 });
