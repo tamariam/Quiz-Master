@@ -128,7 +128,7 @@ footer {
     color: #ffffff;
     font-size: 22px;
     font-family: 'Oswald', sans-serif;
-    font-weight: 400;
+    font-weight: 500;
     cursor: pointer;
     text-align: center;
     letter-spacing: 0.5px;
@@ -171,6 +171,7 @@ footer {
 
 .choose-color {
     color: #ffffff;
+
 }
 
 
@@ -210,6 +211,16 @@ footer {
 
     h1 i {
         font-size: 49px;
+    }
+
+    .choose-color {
+        font-size: 39px;
+    }
+
+    .menu-btn {
+        font-size: 29px;
+        text-align: center;
+        padding: 0 12px 9px 12px;
     }
 }
 
@@ -254,6 +265,21 @@ footer {
 
     h1 i {
         font-size: 52px;
+    }
+
+    .color-div {
+        width: 50vw;
+        border: 3px solid black;
+    }
+
+    .choose-color {
+        font-size: 45px;
+    }
+
+    .menu-btn {
+        font-size: 35px;
+        text-align: center;
+        padding: 0 12px 9px 12px;
     }
 
 }
