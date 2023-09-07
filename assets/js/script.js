@@ -2,11 +2,20 @@
 let boxOne = document.querySelector("#box-1");
 let boxTwo = document.querySelector("#box-2");
 let boxThree = document.querySelector('#box-3');
-let menuBtn = document.querySelector('.menu-btn');
+let menuBtn = document.querySelector('.colors-menu');
+let sportMenuBtn = document.querySelector('.menu-sport');
 let mainBoard = document.querySelector('.game-menu');
 let colorBoard = document.querySelector('.color-div');
 let colorOptions = document.querySelector('.color-btn');
 let boxes = document.querySelectorAll('.box');
+let sportBtn = document.querySelector('.sport-btn');
+let sportBoard = document.querySelector('.sport-div');
+
+sportBtn.addEventListener('click', () => {
+    mainBoard.style.display = 'none';
+    sportBoard.style.display = 'flex';
+
+});
 //this function changes border, to  color div boxes when click//
 const borderChange = (activeBox) => {
     for (let box of boxes) {
@@ -24,8 +33,17 @@ colorOptions.addEventListener('click', () => {
 });
 //  when user click menuBtn ,mainBoard will display and colorBoard disapears//
 menuBtn.addEventListener('click', () => {
+    sportBoard.style.display = 'none';
     colorBoard.style.display = 'none';
     mainBoard.style.display = 'flex';
+    console.log("Menu button clicked");
+});
+
+sportMenuBtn.addEventListener('click', () => {
+    sportBoard.style.display = 'none';
+    colorBoard.style.display = 'none';
+    mainBoard.style.display = 'flex';
+    console.log("Menu button clicked");
 });
 //add eventListeners to boxes to change color//
 boxOne.addEventListener('click', () => {
