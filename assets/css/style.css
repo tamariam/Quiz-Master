@@ -175,6 +175,18 @@ footer {
 
 }
 
+.sport-div {
+    width: 95vw;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #fca311;
+    padding-bottom: 10px;
+    display: none;
+
+}
 
 
 /* make site responsive for tablets */
