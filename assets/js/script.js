@@ -4,6 +4,8 @@ let boxTwo = document.querySelector("#box-2");
 let boxThree = document.querySelector('#box-3');
 let menuBtn = document.querySelector('.colors-menu');
 let sportMenuBtn = document.querySelector('.menu-sport');
+let yesBtn = document.querySelector('.yes-btn');
+let noBtn = document.querySelector('.no-btn');
 let mainBoard = document.querySelector('.game-menu');
 let colorBoard = document.querySelector('.color-div');
 let colorOptions = document.querySelector('.color-btn');
@@ -11,11 +13,22 @@ let boxes = document.querySelectorAll('.box');
 let sportBtn = document.querySelector('.sport-btn');
 let sportBoard = document.querySelector('.sport-div');
 
+// yesBtn.addEventListener('click', () => {
+
+// });
+noBtn.addEventListener('click', () => {
+    sportBoard.style.display = 'none';
+    // colorBoard.style.display = 'none';
+    mainBoard.style.display = 'flex';
+
+
+});
 sportBtn.addEventListener('click', () => {
     mainBoard.style.display = 'none';
     sportBoard.style.display = 'flex';
 
 });
+
 //this function changes border, to  color div boxes when click//
 const borderChange = (activeBox) => {
     for (let box of boxes) {
@@ -36,7 +49,6 @@ menuBtn.addEventListener('click', () => {
     sportBoard.style.display = 'none';
     colorBoard.style.display = 'none';
     mainBoard.style.display = 'flex';
-    console.log("Menu button clicked");
 });
 
 sportMenuBtn.addEventListener('click', () => {

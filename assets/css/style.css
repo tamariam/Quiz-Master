@@ -123,7 +123,7 @@ footer {
     border: none;
     padding: 5px 20px;
     width: 110px;
-    margin-bottom: 30px;
+    margin-top: 5px;
     border-radius: 9px;
     background-color: #6a040f;
     color: #ffffff;
@@ -180,16 +180,17 @@ footer {
     height: 70vh;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     background-color: #fca311;
     padding-bottom: 10px;
+    border-radius: 9px;
     display: none;
 
 }
 
 .question-window {
-    width: 70%;
+    width: 90%;
     height: 25%;
     background-color: #9f86c0;
     border-radius: 15px;
@@ -226,6 +227,27 @@ footer {
 
 .window-btn:hover {
     background-color: #eae2b7;
+}
+
+.user-score {
+    display: none;
+}
+
+.user-score-p {
+    font-family: 'Acme', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.scores-div {
+    display: Flex;
+    align-items: center;
+    gap: 15px;
+
+}
+
+.user-name {
+    text-align: center;
 }
 
 /* make site responsive for tablets */
