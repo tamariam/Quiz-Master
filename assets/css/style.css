@@ -230,7 +230,7 @@ footer {
 }
 
 .user-score {
-    display: none;
+    visibility: hidden;
 }
 
 .user-score-p {
@@ -248,6 +248,15 @@ footer {
 
 .user-name {
     text-align: center;
+}
+
+.play-div {
+    width: 90%;
+    height: 25%;
+    background-color: #9f86c0;
+    border-radius: 15px;
+    display: none;
+
 }
 
 /* make site responsive for tablets */

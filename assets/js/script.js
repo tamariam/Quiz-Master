@@ -12,10 +12,18 @@ let colorOptions = document.querySelector('.color-btn');
 let boxes = document.querySelectorAll('.box');
 let sportBtn = document.querySelector('.sport-btn');
 let sportBoard = document.querySelector('.sport-div');
+let userScoresDiv = document.querySelector('.user-score');
+let questionWindow = document.querySelector('.question-window');
+let playDiv = document.querySelector('.play-div');
 
 // yesBtn.addEventListener('click', () => {
 
 // });
+yesBtn.addEventListener('click', () => {
+    userScoresDiv.style.visibility = 'visible';
+    questionWindow.style.display = 'none';
+    playDiv.style.display = 'block';
+});
 noBtn.addEventListener('click', () => {
     sportBoard.style.display = 'none';
     // colorBoard.style.display = 'none';
