@@ -190,7 +190,7 @@ footer {
 }
 
 .question-window {
-    width: 90%;
+    width: 85%;
     height: 25%;
     background-color: #9f86c0;
     border-radius: 15px;
@@ -244,6 +244,13 @@ footer {
     align-items: center;
     gap: 15px;
 
+}
+
+.score {
+    color: #6a040f;
+    font-family: 'Oswald', 'sans-serif';
+    font-weight: 700;
+    font-size: 20px;
 }
 
 .user-name {
@@ -311,6 +318,39 @@ footer {
         padding-bottom: 9px;
 
     }
+
+    .question-window,
+    .play-div {
+        width: 75%;
+        height: 30%;
+
+    }
+
+    .question-window h2 {
+        font-size: 32px;
+        letter-spacing: 1px;
+
+
+    }
+
+    .btn-container {
+        gap: 35px;
+    }
+
+    .window-btn {
+        width: 120px;
+        font-size: 20px;
+        font-weight: 500;
+
+    }
+
+    .user-score-p {
+        font-size: 24px;
+    }
+
+    .score {
+        font-size: 22px;
+    }
 }
 
 /* give responsive sizes  for desktop */
@@ -376,6 +416,31 @@ footer {
         font-size: 35px;
         text-align: center;
         width: 140px;
+    }
+
+    .question-window h2 {
+        font-size: 35px;
+
+
+
+    }
+
+    .btn-container {
+        gap: 39px;
+    }
+
+    .window-btn {
+        width: 130px;
+        font-size: 22px;
+
+    }
+
+    .user-score-p {
+        font-size: 27px;
+    }
+
+    .score {
+        font-size: 24px;
     }
 
 }
