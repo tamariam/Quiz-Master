@@ -188,6 +188,12 @@ footer {
 
 }
 
+.question-window {
+    width: 40%;
+    height: 25%;
+    background-color: #001D3D;
+    border-radius: 9px;
+}
 
 /* make site responsive for tablets */
 @media screen and (min-width: 768px) {

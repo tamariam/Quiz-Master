@@ -50,6 +50,7 @@ boxOne.addEventListener('click', () => {
     mainBoard.style.backgroundColor = ' #fca311';
     document.body.style.backgroundColor = ' #ffcdb2';
     colorBoard.style.backgroundColor = '#fca311';
+    sportBoard.style.backgroundColor = '#fca311';
     borderChange(boxOne);
 
 });
@@ -57,12 +58,14 @@ boxTwo.addEventListener('click', () => {
     mainBoard.style.backgroundColor = '#e76f51';
     document.body.style.backgroundColor = '#cdb4db';
     colorBoard.style.backgroundColor = '#e76f51';
+    sportBoard.style.backgroundColor = '#e76f51';
     borderChange(boxTwo);
 });
 boxThree.addEventListener('click', () => {
     mainBoard.style.backgroundColor = '#bb3e03';
     document.body.style.backgroundColor = '#ffd670';
     colorBoard.style.backgroundColor = '#bb3e03';
+    sportBoard.style.backgroundColor = '#bb3e03';
     borderChange(boxThree);
 
 });
