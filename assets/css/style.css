@@ -291,6 +291,10 @@ footer {
     color: #6a040f;
 }
 
+#username:focus {
+    outline: none;
+}
+
 label {
     font-family: 'Oswald', sans-serif;
     font-weight: 500;
@@ -302,6 +306,7 @@ label {
 
 
 .start-game-btn {
+    width: 120px;
     font-size: 18px;
     padding: 3px 15px;
     border: none;
@@ -311,6 +316,7 @@ label {
     cursor: pointer;
     background-color: #6a040f;
     color: #ffffff;
+    text-align: center;
 }
 
 .start-game-btn:hover {
@@ -392,6 +398,32 @@ label {
         width: 120px;
         font-size: 20px;
         font-weight: 500;
+
+    }
+
+    .username-div {
+        margin-top: 15px;
+
+    }
+
+
+    #username {
+        font-size: 20px;
+        width: 70%;
+    }
+
+    label {
+        margin-bottom: 10px;
+        font-size: 22px;
+
+    }
+
+
+
+    .start-game-btn {
+        padding: 6px 0;
+        width: 130px;
+        font-size: 20px;
 
     }
 
