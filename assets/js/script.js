@@ -3,7 +3,7 @@ let boxOne = document.querySelector("#box-1");
 let boxTwo = document.querySelector("#box-2");
 let boxThree = document.querySelector('#box-3');
 let menuBtn = document.querySelector('.colors-menu');
-let sportMenuBtn = document.querySelector('.menu-sport');
+let sportMenuBtn = document.querySelector('.menubtn-btn');
 let yesBtn = document.querySelector('.yes-btn');
 let noBtn = document.querySelector('.no-btn');
 let mainBoard = document.querySelector('.game-menu');
@@ -11,7 +11,7 @@ let colorBoard = document.querySelector('.color-div');
 let colorOptions = document.querySelector('.color-btn');
 let boxes = document.querySelectorAll('.box');
 let sportBtn = document.querySelector('.sport-btn');
-let sportBoard = document.querySelector('.sport-div');
+let sportBoard = document.querySelector('.main-div');
 let userScoresDiv = document.querySelector('.user-score');
 let questionWindow = document.querySelector('.question-window');
 let playDiv = document.querySelector('.play-div');
@@ -19,6 +19,8 @@ let userName = document.querySelector('#username');
 let form = document.querySelector('#form');
 let startGameBtn = document.querySelector('.start-game-btn');
 let playerName = document.querySelector('#player-name');
+let movieBtn = document.querySelector('.movie-btn');
+let musicBtn = document.querySelector('.music-btn');
 
 // when user clicks this btn,if it will update player name,also if there is no value inserted it will notify user//
 startGameBtn.addEventListener('click', (event) => {
@@ -62,12 +64,19 @@ noBtn.addEventListener('click', () => {
 
 
 });
+movieBtn.addEventListener('click', () => {
+    mainBoard.style.display = 'none';
+    sportBoard.style.display = 'flex';
+});
 sportBtn.addEventListener('click', () => {
     mainBoard.style.display = 'none';
     sportBoard.style.display = 'flex';
 
 });
-
+musicBtn.addEventListener('click', () => {
+    mainBoard.style.display = 'none';
+    sportBoard.style.display = 'flex';
+});
 //this function changes border, to  color div boxes when click//
 const borderChange = (activeBox) => {
     for (let box of boxes) {
