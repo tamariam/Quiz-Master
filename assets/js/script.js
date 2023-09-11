@@ -15,10 +15,18 @@ let sportBoard = document.querySelector('.sport-div');
 let userScoresDiv = document.querySelector('.user-score');
 let questionWindow = document.querySelector('.question-window');
 let playDiv = document.querySelector('.play-div');
+let userName = document.querySelector('#username');
+let userNameDiv = document.querySelector('.username-div');
+let startGameBtn = document.querySelector('.start-game-btn');
+let playerName = document.querySelector('#player-name');
 
-// yesBtn.addEventListener('click', () => {
+startGameBtn.addEventListener('click', () => {
+    userNameDiv.style.display = 'none';
+    let newPlayerName = userName.value;
+    playerName.textContent = newPlayerName;
 
-// });
+
+});
 yesBtn.addEventListener('click', () => {
     userScoresDiv.style.visibility = 'visible';
     questionWindow.style.display = 'none';

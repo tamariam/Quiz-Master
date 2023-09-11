@@ -70,13 +70,13 @@
       <div class="play-div">
         <div class="username-div">
         <label for="username" >create your username</label>
-        <input type="text" id="username" placeholder="your username">
+        <input type="text" id="username" placeholder="your username" required>
         <button class="start-game-btn">Start Game</button>
 </div>
       </div>
       <!-- this div display users name and its correct and incorrect answers -->
         <div class="user-score">
-            <p class="user-score-p user-name">Player:</p>
+            <p class="user-score-p user-name">Player:<span id="player-name"></span> </p>
             <div class="scores-div">
             <p class=" user-score-p  correct-answer">Correct : <span class="score">0</span></p>
             <p class=" user-score-p  incorretc-answer">incorrect :  <span class="score">0</span></p>
