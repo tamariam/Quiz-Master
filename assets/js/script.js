@@ -20,7 +20,9 @@ let userNameDiv = document.querySelector('.username-div');
 let startGameBtn = document.querySelector('.start-game-btn');
 let playerName = document.querySelector('#player-name');
 
+
 startGameBtn.addEventListener('click', () => {
+    userNameDiv.style.display = 'block';
     userNameDiv.style.display = 'none';
     let newPlayerName = userName.value;
     playerName.textContent = newPlayerName;
@@ -31,6 +33,7 @@ yesBtn.addEventListener('click', () => {
     userScoresDiv.style.visibility = 'visible';
     questionWindow.style.display = 'none';
     playDiv.style.display = 'block';
+    userNameDiv.style.display = 'flex';
 });
 noBtn.addEventListener('click', () => {
     sportBoard.style.display = 'none';
@@ -66,14 +69,19 @@ menuBtn.addEventListener('click', () => {
     colorBoard.style.display = 'none';
     mainBoard.style.display = 'flex';
     playDiv.style.display = 'none';
+
 });
 
 sportMenuBtn.addEventListener('click', () => {
-    // sportBoard.style.display = 'block';
+    sportBoard.style.display = 'none';
     colorBoard.style.display = 'none';
     mainBoard.style.display = 'flex';
     questionWindow.style.display = 'block';
     playDiv.style.display = 'none';
+    playerName.textContent = '';
+    userName.value = "";
+
+
 
 });
 //add eventListeners to boxes to change color//
