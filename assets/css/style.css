@@ -518,6 +518,26 @@ label {
 
     }
 
+
+
+    #username {
+        font-size: 22px;
+
+    }
+
+    label {
+        font-size: 24px;
+
+    }
+
+
+
+    .start-game-btn {
+        width: 140px;
+        font-size: 22px;
+
+    }
+
     .user-score-p {
         font-size: 27px;
     }
