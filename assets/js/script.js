@@ -57,13 +57,16 @@ menuBtn.addEventListener('click', () => {
     sportBoard.style.display = 'none';
     colorBoard.style.display = 'none';
     mainBoard.style.display = 'flex';
+    playDiv.style.display = 'none';
 });
 
 sportMenuBtn.addEventListener('click', () => {
-    sportBoard.style.display = 'none';
+    // sportBoard.style.display = 'block';
     colorBoard.style.display = 'none';
     mainBoard.style.display = 'flex';
-    console.log("Menu button clicked");
+    questionWindow.style.display = 'block';
+    playDiv.style.display = 'none';
+
 });
 //add eventListeners to boxes to change color//
 boxOne.addEventListener('click', () => {

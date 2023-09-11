@@ -266,6 +266,57 @@ footer {
 
 }
 
+.username-div {
+    display: Flex;
+    flex-direction: column;
+    font-family: 'Oswald', sans-serif;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    gap: 15px;
+}
+
+
+#username {
+    font-size: 18px;
+    padding: 9px 0;
+    border: none;
+    border-radius: 9px;
+    width: 60%;
+    text-align: Center;
+
+}
+
+#username::placeholder {
+    color: #6a040f;
+}
+
+label {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: #6a040f;
+    font-weight: 700;
+}
+
+
+
+.start-game-btn {
+    font-size: 18px;
+    padding: 3px 15px;
+    border: none;
+    border-radius: 9px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    cursor: pointer;
+    background-color: #6a040f;
+    color: #ffffff;
+}
+
+.start-game-btn:hover {
+    background-color: #0a9396;
+}
+
 /* make site responsive for tablets */
 @media screen and (min-width: 768px) {
     .game-menu {
