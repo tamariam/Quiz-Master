@@ -16,24 +16,44 @@ let userScoresDiv = document.querySelector('.user-score');
 let questionWindow = document.querySelector('.question-window');
 let playDiv = document.querySelector('.play-div');
 let userName = document.querySelector('#username');
-let userNameDiv = document.querySelector('.username-div');
+let form = document.querySelector('#form');
 let startGameBtn = document.querySelector('.start-game-btn');
 let playerName = document.querySelector('#player-name');
 
+// when user clicks this btn,if it will update player name,also if there is no value inserted it will notify user//
+startGameBtn.addEventListener('click', (event) => {
+    event.preventDefault();
+    if (userName.value === '') {
+        userName.style.border = '1px solid red';
+    } else {
+        form.style.display = 'none';
+        let newPlayerName = userName.value;
+        playerName.textContent = newPlayerName;
 
-startGameBtn.addEventListener('click', () => {
-    userNameDiv.style.display = 'block';
-    userNameDiv.style.display = 'none';
-    let newPlayerName = userName.value;
-    playerName.textContent = newPlayerName;
-
-
+    }
 });
+// same functionality as startGameBtn//
+userName.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        event.preventDefault();
+
+        if (userName.value === '') {
+
+            userName.style.border = '1px solid red';
+        } else {
+            form.style.display = 'none';
+            let newPlayerName = userName.value;
+            playerName.textContent = newPlayerName;
+
+        }
+    }
+});
+// when user clicks yes,new div will open where user should create username//
 yesBtn.addEventListener('click', () => {
     userScoresDiv.style.visibility = 'visible';
     questionWindow.style.display = 'none';
     playDiv.style.display = 'block';
-    userNameDiv.style.display = 'flex';
+    form.style.display = 'flex';
 });
 noBtn.addEventListener('click', () => {
     sportBoard.style.display = 'none';

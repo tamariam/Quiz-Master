@@ -13,6 +13,7 @@
       content=" check knwoladge, quiz-game, sport, music, art"
     />
     <link rel="stylesheet" href="assets/css/style.css" />
+  
     <title>Quiz-Master</title>
     
     <!-- font awasome js kit -->
@@ -47,7 +48,7 @@
     </div>
     <!-- div for  choose color btn, when user press choose color btn, this div will open -->
     
-    </div>
+    
     <div class="color-div">
         <header>
             <h1 class="choose-color">Choose Color</h1>
@@ -69,22 +70,25 @@
             </div>
       </div>
       <div class="play-div">
-        <div class="username-div">
-        <label for="username" >create your username</label>
-        <input type="text" id="username" placeholder="your username" required>
-        <button class="start-game-btn">Start Game</button>
+    <form id="form">
+        <label for="username">Create your username</label>
+         <input type="text" id="username"  name="username"   placeholder="Your username" required>
+        <input type="submit" class="start-game-btn" value="Start Game">
+    </form>
+</div> 
+<!-- this div display users name and its correct and incorrect answers -->
+<div class="user-score">
+    <p class="user-score-p user-name">Player:<span id="player-name"></span> </p>
+    <div class="scores-div">
+        <p class=" user-score-p  correct-answer">Correct : <span class="score">0</span></p>
+        <p class=" user-score-p  incorretc-answer">incorrect : <span class="score">0</span></p>
+    </div>
+
 </div>
       </div>
-      <!-- this div display users name and its correct and incorrect answers -->
-        <div class="user-score">
-            <p class="user-score-p user-name">Player:<span id="player-name"></span> </p>
-            <div class="scores-div">
-            <p class=" user-score-p  correct-answer">Correct : <span class="score">0</span></p>
-            <p class=" user-score-p  incorretc-answer">incorrect :  <span class="score">0</span></p>
- </div>
-            
+    
         </div>
-        </div>
+    
     <footer>
         <a href="https://www.linkedin.com/in/sopiko-abulidze-69a563251/" target="_blank" aria-label="my linkdin url">
         <i class="fa-brands fa-linkedin"></i></a>
