@@ -208,11 +208,23 @@ choices.innerHTML='';
          let choiceList = document.createElement('li');
          choiceList.textContent = choice;
          choices.appendChild(choiceList);
+         choiceList.addEventListener('click',(event)=>{
+            const usersChoice=event.target.textContent;
+            checkUsersChoice(usersChoice, currentQuestion.correctAnswer);
+         })
      }
   
 };
    getQuestion();
-
+   //check users choice//
+   const checkUsersChoice=(usersChoice,correctAnswer)=>{
+    if(usersChoice===correctAnswer){
+        alert('good')
+    }else{
+        alert('bad');
+    }
+   }
+//this function checks if there is questions left or not//
    const checkIfFinished=()=>{
      if(currentQuestionIndex===sportQuestions.length){
      alert('finished');
@@ -220,6 +232,7 @@ choices.innerHTML='';
    }
  
 }
+
   nextBtn.addEventListener('click',()=>{
  currentQuestionIndex ++;
  console.log(currentQuestionIndex);
