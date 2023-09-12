@@ -64,19 +64,14 @@ noBtn.addEventListener('click', () => {
 
 
 });
-movieBtn.addEventListener('click', () => {
+//create function goToGameBoard amd we will use this function to go gameBoard when user clicks one of the btns from music movie or sport//
+const goToGameBoard=()=>{
     mainBoard.style.display = 'none';
     sportBoard.style.display = 'flex';
-});
-sportBtn.addEventListener('click', () => {
-    mainBoard.style.display = 'none';
-    sportBoard.style.display = 'flex';
-
-});
-musicBtn.addEventListener('click', () => {
-    mainBoard.style.display = 'none';
-    sportBoard.style.display = 'flex';
-});
+}
+movieBtn.addEventListener('click', goToGameBoard)
+sportBtn.addEventListener('click',goToGameBoard);
+musicBtn.addEventListener('click',  goToGameBoard);
 //this function changes border, to  color div boxes when click//
 const borderChange = (activeBox) => {
     for (let box of boxes) {
