@@ -21,6 +21,9 @@ let startGameBtn = document.querySelector('.start-game-btn');
 let playerName = document.querySelector('#player-name');
 let movieBtn = document.querySelector('.movie-btn');
 let musicBtn = document.querySelector('.music-btn');
+let playGameDiv = document.querySelector('.play-game');
+let question = document.querySelector('.question');
+let choices = document.querySelector('.choices');
 
 // when user clicks this btn,if it will update player name,also if there is no value inserted it will notify user//
 startGameBtn.addEventListener('click', (event) => {
@@ -132,7 +135,8 @@ boxThree.addEventListener('click', () => {
     borderChange(boxThree);
 
 });
-///// MAIN GAIOM LOGIC////
+///// MAIN GAIM LOGIC////
+// //SPORT//
 const sportQuestions = [
     {
         question: "Who holds the record for the most goals scored in a single FIFA World Cup tournament?",
@@ -185,5 +189,10 @@ const sportQuestions = [
         correctAnswer: "c"
     }
 ];
-
-
+let currentQuestionIndex = 0;
+const getQuestion = () => {
+    let currentQuestion = sportQuestions[currentQuestionIndex];
+    question.textContent = currentQuestion.question;
+    console.log(question.textContent);
+};
+getQuestion();
