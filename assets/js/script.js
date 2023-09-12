@@ -3,7 +3,7 @@ let boxOne = document.querySelector("#box-1");
 let boxTwo = document.querySelector("#box-2");
 let boxThree = document.querySelector('#box-3');
 let menuBtn = document.querySelector('.colors-menu');
-let sportMenuBtn = document.querySelector('.menubtn-btn');
+let mainMenuBtn = document.querySelector('.menubtn-btn');
 let yesBtn = document.querySelector('.yes-btn');
 let noBtn = document.querySelector('.no-btn');
 let mainBoard = document.querySelector('.game-menu');
@@ -24,6 +24,7 @@ let musicBtn = document.querySelector('.music-btn');
 let playGameDiv = document.querySelector('.play-game');
 let question = document.querySelector('.question');
 let choices = document.querySelector('.choices');
+let nextBtn=document.querySelector('.next-btn');
 
 // when user clicks this btn,if it will update player name,also if there is no value inserted it will notify user//
 startGameBtn.addEventListener('click', (event) => {
@@ -101,7 +102,7 @@ menuBtn.addEventListener('click', () => {
 
 });
 
-sportMenuBtn.addEventListener('click', () => {
+mainMenuBtn.addEventListener('click', () => {
     gameBoard.style.display = 'none';
     colorBoard.style.display = 'none';
     mainBoard.style.display = 'flex';
@@ -109,6 +110,7 @@ sportMenuBtn.addEventListener('click', () => {
     playDiv.style.display = 'none';
     playerName.textContent = '';
     userName.value = "";
+    playGameDiv.style.display='none';
 
 
 
@@ -192,10 +194,16 @@ const sportQuestions = [
     }
 ];
 let currentQuestionIndex = 0;
+
+
 const getQuestion = () => {
     let currentQuestion = sportQuestions[currentQuestionIndex];
     question.textContent = currentQuestion.question;
+    
     //make sure previos choices not display//
+   
+choices.innerHTML='';
+    //create  choicelist//
      for (let choice of currentQuestion.choices) {
          let choiceList = document.createElement('li');
          choiceList.textContent = choice;
@@ -205,3 +213,12 @@ const getQuestion = () => {
 
 };
 getQuestion();
+
+
+
+ nextBtn.addEventListener('click',()=>{
+currentQuestionIndex ++;
+ getQuestion();
+
+ });
+ 
