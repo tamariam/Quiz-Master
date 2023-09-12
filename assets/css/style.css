@@ -324,6 +324,10 @@ label {
     background-color: #0a9396;
 }
 
+.play-game {
+    display: none;
+}
+
 /* make site responsive for tablets */
 @media screen and (min-width: 768px) {
     .game-menu {
@@ -435,6 +439,8 @@ label {
     .score {
         font-size: 22px;
     }
+
+
 }
 
 /* give responsive sizes  for desktop */

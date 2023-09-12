@@ -34,6 +34,7 @@ startGameBtn.addEventListener('click', (event) => {
         form.style.display = 'none';
         let newPlayerName = userName.value;
         playerName.textContent = newPlayerName;
+        playGameDiv.style.display = 'block';
 
     }
 });
@@ -49,6 +50,7 @@ userName.addEventListener('keydown', (event) => {
             form.style.display = 'none';
             let newPlayerName = userName.value;
             playerName.textContent = newPlayerName;
+            playGameDiv.style.display = 'block';
 
         }
     }
@@ -193,6 +195,13 @@ let currentQuestionIndex = 0;
 const getQuestion = () => {
     let currentQuestion = sportQuestions[currentQuestionIndex];
     question.textContent = currentQuestion.question;
-    console.log(question.textContent);
+    //make sure previos choices not display//
+     for (let choice of currentQuestion.choices) {
+         let choiceList = document.createElement('li');
+         choiceList.textContent = choice;
+         choices.appendChild(choiceList);
+     }
+ 
+
 };
 getQuestion();
