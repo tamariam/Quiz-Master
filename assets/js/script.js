@@ -209,15 +209,21 @@ choices.innerHTML='';
          choiceList.textContent = choice;
          choices.appendChild(choiceList);
      }
- 
-
+  
 };
-getQuestion();
+   getQuestion();
 
-
-
- nextBtn.addEventListener('click',()=>{
-currentQuestionIndex ++;
+   const checkIfFinished=()=>{
+     if(currentQuestionIndex===sportQuestions.length){
+     alert('finished');
+ 
+   }
+ 
+}
+  nextBtn.addEventListener('click',()=>{
+ currentQuestionIndex ++;
+ console.log(currentQuestionIndex);
+checkIfFinished();
  getQuestion();
 
  });
