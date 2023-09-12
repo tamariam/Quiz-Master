@@ -25,6 +25,8 @@ let playGameDiv = document.querySelector('.play-game');
 let question = document.querySelector('.question');
 let choices = document.querySelector('.choices');
 let nextBtn=document.querySelector('.next-btn');
+ let plusScore=document.querySelector('.plus-score');
+ let minusScore=document.querySelector('.minus-score');
 
 // when user clicks this btn,if it will update player name,also if there is no value inserted it will notify user//
 startGameBtn.addEventListener('click', (event) => {
@@ -194,6 +196,8 @@ const sportQuestions = [
     }
 ];
 let currentQuestionIndex = 0;
+let score=0;
+let noScore=0;
 
 
 const getQuestion = () => {
@@ -218,10 +222,15 @@ choices.innerHTML='';
    getQuestion();
    //check users choice//
    const checkUsersChoice=(usersChoice,correctAnswer)=>{
-    if(usersChoice===correctAnswer){
-        alert('good')
-    }else{
+    const choiceTarget=usersChoice.charAt(0);
+    if(choiceTarget===correctAnswer){
+        alert('good');
+        score++;
+        plusScore.innerHTML=score;
+    }else {
         alert('bad');
+        noScore++;
+        minusScore.innerHTML=noScore;
     }
    }
 //this function checks if there is questions left or not//
@@ -235,7 +244,6 @@ choices.innerHTML='';
 
   nextBtn.addEventListener('click',()=>{
  currentQuestionIndex ++;
- console.log(currentQuestionIndex);
 checkIfFinished();
  getQuestion();
 
