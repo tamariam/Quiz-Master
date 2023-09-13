@@ -113,6 +113,8 @@ mainMenuBtn.addEventListener('click', () => {
     playerName.textContent = '';
     userName.value = "";
     playGameDiv.style.display='none';
+    plusScore.innerHTML='0';
+    minusScore.innerHTML='0';
 
 
 
