@@ -264,11 +264,13 @@ choices.innerHTML='';
 }
 
   nextBtn.addEventListener('click',()=>{
-    
+    if(choiceAttempt>=1){
  currentQuestionIndex ++;
 
 checkIfFinished();
  getQuestion();
-
+    } else{
+        alert('please choose answer');
+    }
  });
  
