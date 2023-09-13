@@ -113,8 +113,14 @@ mainMenuBtn.addEventListener('click', () => {
     playerName.textContent = '';
     userName.value = "";
     playGameDiv.style.display='none';
-    plusScore.innerHTML='0';
-    minusScore.innerHTML='0';
+    score=0;
+    noScore=0;
+     plusScore.innerHTML=score;
+     minusScore.innerHTML=noScore;
+     currentQuestionIndex=0;
+     getQuestion();
+  
+   
 
 
 
@@ -145,6 +151,12 @@ boxThree.addEventListener('click', () => {
 });
 ///// MAIN GAIM LOGIC////
 // //SPORT//
+let currentQuestionIndex = 0;
+let score=0;
+let noScore=0;
+ let choiceAttempt=0;
+  
+
 const sportQuestions = [
     {
         question: "Who holds the record for the most goals scored in a single FIFA World Cup tournament?",
@@ -197,9 +209,7 @@ const sportQuestions = [
         correctAnswer: "c"
     }
 ];
-let currentQuestionIndex = 0;
-let score=0;
-let noScore=0;
+
 
 
 const getQuestion = () => {
@@ -207,7 +217,7 @@ const getQuestion = () => {
     question.textContent = currentQuestion.question;
     
     //make sure previos choices not display//
-   
+   choiceAttempt=0;
 choices.innerHTML='';
     //create  choicelist//
      for (let choice of currentQuestion.choices) {
@@ -224,17 +234,26 @@ choices.innerHTML='';
    getQuestion();
    //check users choice//
    const checkUsersChoice=(usersChoice,correctAnswer)=>{
-    const choiceTarget=usersChoice.charAt(0);
-    if(choiceTarget===correctAnswer){
+   const choiceTarget=usersChoice.charAt(0);
+    if(choiceAttempt<1){
+      if(choiceTarget===correctAnswer){
         alert('good');
         score++;
         plusScore.innerHTML=score;
+        choiceAttempt++;
     }else {
         alert('bad');
         noScore++;
         minusScore.innerHTML=noScore;
+        choiceAttempt++;
+    } }else if(choiceAttempt >=1){
+        alert('stop');
     }
-   }
+   
+    }
+    
+
+   
 //this function checks if there is questions left or not//
    const checkIfFinished=()=>{
      if(currentQuestionIndex===sportQuestions.length){
@@ -245,7 +264,9 @@ choices.innerHTML='';
 }
 
   nextBtn.addEventListener('click',()=>{
+    
  currentQuestionIndex ++;
+
 checkIfFinished();
  getQuestion();
 
