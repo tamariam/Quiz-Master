@@ -24,9 +24,9 @@ let musicBtn = document.querySelector('.music-btn');
 let playGameDiv = document.querySelector('.play-game');
 let question = document.querySelector('.question');
 let choices = document.querySelector('.choices');
-let nextBtn=document.querySelector('.next-btn');
- let plusScore=document.querySelector('.plus-score');
- let minusScore=document.querySelector('.minus-score');
+let nextBtn = document.querySelector('.next-btn');
+let plusScore = document.querySelector('.plus-score');
+let minusScore = document.querySelector('.minus-score');
 
 // when user clicks this btn,if it will update player name,also if there is no value inserted it will notify user//
 startGameBtn.addEventListener('click', (event) => {
@@ -54,6 +54,7 @@ userName.addEventListener('keydown', (event) => {
             let newPlayerName = userName.value;
             playerName.textContent = newPlayerName;
             playGameDiv.style.display = 'block';
+            playDiv.style.height = '50%';
 
         }
     }
@@ -112,15 +113,15 @@ mainMenuBtn.addEventListener('click', () => {
     playDiv.style.display = 'none';
     playerName.textContent = '';
     userName.value = "";
-    playGameDiv.style.display='none';
-    score=0;
-    noScore=0;
-     plusScore.innerHTML=score;
-     minusScore.innerHTML=noScore;
-     currentQuestionIndex=0;
-     getQuestion();
-  
-   
+    playGameDiv.style.display = 'none';
+    score = 0;
+    noScore = 0;
+    plusScore.innerHTML = score;
+    minusScore.innerHTML = noScore;
+    currentQuestionIndex = 0;
+    getQuestion();
+
+
 
 
 
@@ -152,10 +153,10 @@ boxThree.addEventListener('click', () => {
 ///// MAIN GAIM LOGIC////
 // //SPORT//
 let currentQuestionIndex = 0;
-let score=0;
-let noScore=0;
- let choiceAttempt=0;
-  
+let score = 0;
+let noScore = 0;
+let choiceAttempt = 0;
+
 
 const sportQuestions = [
     {
@@ -215,62 +216,60 @@ const sportQuestions = [
 const getQuestion = () => {
     let currentQuestion = sportQuestions[currentQuestionIndex];
     question.textContent = currentQuestion.question;
-    
+
     //make sure previos choices not display//
-   choiceAttempt=0;
-choices.innerHTML='';
+    choiceAttempt = 0;
+    choices.innerHTML = '';
     //create  choicelist//
-     for (let choice of currentQuestion.choices) {
-         let choiceList = document.createElement('li');
-         choiceList.textContent = choice;
-         choices.appendChild(choiceList);
-         choiceList.addEventListener('click',(event)=>{
-            const usersChoice=event.target.textContent;
-            checkUsersChoice(usersChoice, currentQuestion.correctAnswer);
-         })
-     }
-  
+    for (let choice of currentQuestion.choices) {
+        let choiceList = document.createElement('span');
+        choiceList.classList.add('choice-btns');
+        choiceList.textContent = choice;
+        choices.appendChild(choiceList);
+        choiceList.addEventListener('click', (event) => {
+            const usersChoice = event.target.textContent;
+            const choiceTarget = usersChoice.charAt(0);
+            if (choiceAttempt < 1) {
+                if (choiceTarget === currentQuestion.correctAnswer) {
+                    event.target.style.color = 'green';
+                    score++;
+                    plusScore.innerHTML = score;
+                    choiceAttempt++;
+                } else {
+                    event.target.style.color = 'red';
+                    noScore++;
+                    minusScore.innerHTML = noScore;
+                    choiceAttempt++;
+                }
+            } else if (choiceAttempt >= 1) {
+                alert('stop');
+            }
+
+        });
+
+
+
+    }
 };
-   getQuestion();
-   //check users choice//
-   const checkUsersChoice=(usersChoice,correctAnswer)=>{
-   const choiceTarget=usersChoice.charAt(0);
-    if(choiceAttempt<1){
-      if(choiceTarget===correctAnswer){
-        alert('good');
-        score++;
-        plusScore.innerHTML=score;
-        choiceAttempt++;
-    }else {
-        alert('bad');
-        noScore++;
-        minusScore.innerHTML=noScore;
-        choiceAttempt++;
-    } }else if(choiceAttempt >=1){
-        alert('stop');
-    }
-   
-    }
-    
+getQuestion();
 
-   
+
 //this function checks if there is questions left or not//
-   const checkIfFinished=()=>{
-     if(currentQuestionIndex===sportQuestions.length){
-     alert('finished');
- 
-   }
- 
-}
+const checkIfFinished = () => {
+    if (currentQuestionIndex === sportQuestions.length) {
+        alert('finished');
 
-  nextBtn.addEventListener('click',()=>{
-    if(choiceAttempt>=1){
- currentQuestionIndex ++;
+    }
 
-checkIfFinished();
- getQuestion();
-    } else{
+};
+//next btn//
+nextBtn.addEventListener('click', () => {
+    if (choiceAttempt >= 1) {
+        currentQuestionIndex++;
+
+        checkIfFinished();
+        getQuestion();
+    } else {
         alert('please choose answer');
     }
- });
- 
+});

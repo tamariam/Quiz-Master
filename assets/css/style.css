@@ -266,6 +266,8 @@ footer {
 
 }
 
+
+
 #form {
     display: Flex;
     flex-direction: column;
@@ -326,6 +328,29 @@ label {
 
 .play-game {
     display: none;
+}
+
+.choices {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.question {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    text-align: center;
+
+}
+
+.choice-btns {
+    cursor: pointer;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
 }
 
 /* make site responsive for tablets */
