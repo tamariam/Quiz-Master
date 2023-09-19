@@ -27,6 +27,9 @@ let choices = document.querySelector('.choices');
 let nextBtn = document.querySelector('.next-btn');
 let plusScore = document.querySelector('.plus-score');
 let minusScore = document.querySelector('.minus-score');
+const resumeDiv = document.querySelector('.resume-div');
+const resumeBtn = document.querySelector('.resume-btn');
+const restartBtn = document.querySelector('.restart-btn');
 
 // when user clicks this btn,if it will update player name,also if there is no value inserted it will notify user//
 startGameBtn.addEventListener('click', (event) => {
@@ -67,7 +70,7 @@ yesBtn.addEventListener('click', () => {
     form.style.display = 'flex';
 });
 noBtn.addEventListener('click', () => {
-    sportBoard.style.display = 'none';
+    mainBoard.style.display = 'none';
     // colorBoard.style.display = 'none';
     mainBoard.style.display = 'flex';
 
@@ -77,6 +80,7 @@ noBtn.addEventListener('click', () => {
 const goToGameBoard = () => {
     mainBoard.style.display = 'none';
     gameBoard.style.display = 'flex';
+
 };
 movieBtn.addEventListener('click', goToGameBoard);
 sportBtn.addEventListener('click', goToGameBoard);
@@ -106,25 +110,46 @@ menuBtn.addEventListener('click', () => {
 });
 
 mainMenuBtn.addEventListener('click', () => {
-    gameBoard.style.display = 'none';
-    colorBoard.style.display = 'none';
-    mainBoard.style.display = 'flex';
-    questionWindow.style.display = 'block';
+    if (currentQuestionIndex > 0) {
+        gameBoard.style.display = 'none';
+        colorBoard.style.display = 'none';
+        mainBoard.style.display = 'flex';
+
+        playDiv.style.display = 'block';
+
+        playGameDiv.style.display = 'none';
+        resumeDiv.style.display = 'flex';
+    } else {
+        gameBoard.style.display = 'none';
+        colorBoard.style.display = 'none';
+        mainBoard.style.display = 'flex';
+        questionWindow.style, display = 'flex';
+
+
+    }
+
+
+
+
+
+});
+restartBtn.addEventListener('click', () => {
     playDiv.style.display = 'none';
+    resumeDiv.style.display = 'none';
     playerName.textContent = '';
     userName.value = "";
-    playGameDiv.style.display = 'none';
     score = 0;
     noScore = 0;
     plusScore.innerHTML = score;
     minusScore.innerHTML = noScore;
     currentQuestionIndex = 0;
+    questionWindow.style.display = 'block';
+
     getQuestion();
-
-
-
-
-
+});
+resumeBtn.addEventListener('click', () => {
+    resumeDiv.style.display = 'none';
+    playGameDiv.style.display = 'block';
 });
 //add eventListeners to boxes to change color//
 boxOne.addEventListener('click', () => {

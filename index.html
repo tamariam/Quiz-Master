@@ -69,12 +69,14 @@
             <button class="window-btn no-btn">No</button>
             </div>
       </div>
+      <!-- when user clicks yes btn, this div will open -->
       <div class="play-div">
     <form id="form">
         <label for="username">Create your username</label>
          <input type="text" id="username"  name="username"   placeholder="Your username" required>
         <input type="submit" class="start-game-btn" value="Start Game">
     </form>
+    <!-- this is main container for game -->
     <div class="play-game">
         <p class="question"></p>
     
@@ -82,7 +84,11 @@
          <button class='next-btn'>next</button>
 
 </div> 
-
+<!-- when user qlicks quit btn and then returns to same game, this div will asks user if wants to resume or restart  -->
+<div class="resume-div">
+    <button class="resume-btn">resume game</button>
+    <button class="restart-btn">restart game</button>
+</div>
 </div>
 <!-- this div display users name and its correct and incorrect answers -->
 <div class="user-score">
