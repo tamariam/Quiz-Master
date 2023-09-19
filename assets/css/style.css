@@ -357,9 +357,7 @@ label {
 }
 
 .resume-div {
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
+
     width: 100%;
     height: 100%;
     display: none;
@@ -398,6 +396,10 @@ label {
 }
 
 .no-choice {
+    display: none;
+}
+
+.finished {
     display: none;
 }
 

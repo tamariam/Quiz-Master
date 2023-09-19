@@ -29,10 +29,12 @@ let plusScore = document.querySelector('.plus-score');
 let minusScore = document.querySelector('.minus-score');
 const resumeDiv = document.querySelector('.resume-div');
 const resumeBtn = document.querySelector('.resume-btn');
-const restartBtn = document.querySelector('.restart-btn');
+const restartBtns = document.querySelectorAll('.restart-btn');
 const correctResult = document.querySelector('.correct-result');
 const incorrectResult = document.querySelector('.incorrect-result');
 const noChoice = document.querySelector('.no-choice');
+const finished = document.querySelector('.finished');
+const finishedText = document.querySelector('.finished-text');
 
 // when user clicks this btn,if it will update player name,also if there is no value inserted it will notify user//
 startGameBtn.addEventListener('click', (event) => {
@@ -44,6 +46,10 @@ startGameBtn.addEventListener('click', (event) => {
         let newPlayerName = userName.value;
         playerName.textContent = newPlayerName;
         playGameDiv.style.display = 'block';
+        playDiv.style.height = '50%';
+        question.style.display = 'block';
+        choices.style.display = 'flex';
+
 
     }
 });
@@ -61,6 +67,8 @@ userName.addEventListener('keydown', (event) => {
             playerName.textContent = newPlayerName;
             playGameDiv.style.display = 'block';
             playDiv.style.height = '50%';
+            question.style.display = 'block';
+            choices.style.display = 'flex';
 
         }
     }
@@ -71,6 +79,8 @@ yesBtn.addEventListener('click', () => {
     questionWindow.style.display = 'none';
     playDiv.style.display = 'block';
     form.style.display = 'flex';
+
+
 });
 noBtn.addEventListener('click', () => {
     gameBoard.style.display = 'none';
@@ -114,7 +124,7 @@ menuBtn.addEventListener('click', () => {
 });
 
 mainMenuBtn.addEventListener('click', () => {
-    if (currentQuestionIndex > 0) {
+    if (currentQuestionIndex >= 0) {
         gameBoard.style.display = 'none';
         colorBoard.style.display = 'none';
         mainBoard.style.display = 'flex';
@@ -123,6 +133,7 @@ mainMenuBtn.addEventListener('click', () => {
 
         playGameDiv.style.display = 'none';
         resumeDiv.style.display = 'flex';
+        finished.style.display = 'none';
     } else {
         gameBoard.style.display = 'none';
         colorBoard.style.display = 'none';
@@ -138,20 +149,23 @@ mainMenuBtn.addEventListener('click', () => {
 
 
 });
-restartBtn.addEventListener('click', () => {
-    playDiv.style.display = 'none';
-    resumeDiv.style.display = 'none';
-    playerName.textContent = '';
-    userName.value = "";
-    score = 0;
-    noScore = 0;
-    plusScore.innerHTML = score;
-    minusScore.innerHTML = noScore;
-    currentQuestionIndex = 0;
-    questionWindow.style.display = 'block';
+for (let restartBtn of restartBtns) {
+    restartBtn.addEventListener('click', () => {
+        playDiv.style.display = 'none';
+        resumeDiv.style.display = 'none';
+        playerName.textContent = '';
+        userName.value = "";
+        score = 0;
+        noScore = 0;
+        plusScore.innerHTML = score;
+        minusScore.innerHTML = noScore;
+        currentQuestionIndex = 0;
+        questionWindow.style.display = 'block';
+        finished.style.display = 'none';
 
-    getQuestion();
-});
+        getQuestion();
+    });
+};
 resumeBtn.addEventListener('click', () => {
     resumeDiv.style.display = 'none';
     playGameDiv.style.display = 'block';
@@ -291,7 +305,10 @@ getQuestion();
 //this function checks if there is questions left or not//
 const checkIfFinished = () => {
     if (currentQuestionIndex === sportQuestions.length) {
-        alert('finished');
+        question.style.display = 'none';
+        choices.style.display = 'none';
+        finished.style.display = 'block';
+        finishedText.textContent = `Game Finished! Thanks for playing. you answered ${score} answers correctly`;
 
     }
 
