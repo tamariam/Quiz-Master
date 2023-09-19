@@ -81,9 +81,27 @@
         <p class="question"></p>
     
         <div class="choices"></div>
-         <button class='next-btn'>next</button>
+         
+         <!-- this div will  display text if users answer was correct or incorrect -->
+         
+          <div class="correct-result">
+            <p >You got it right! Well done.</p> 
+            <button class='next-btn'>next</button>
+            </div>
+            <div class="incorrect-result">
+            <p >`Oops, that's not quite right.</p>
+            <button class='next-btn'>next</button>
+            </div> 
+            <!-- this wil display if user try to choose answer more then one time -->
+            <div class="no-choice">
+                <p>You have already made your choice, go to the next question</p>
+                <button class='next-btn'>next</button>
+            </div>
+            
+            
+         </div>
 
-</div> 
+
 <!-- when user qlicks quit btn and then returns to same game, this div will asks user if wants to resume or restart  -->
 <div class="resume-div">
     <button class="resume-btn">resume game</button>

@@ -24,12 +24,15 @@ let musicBtn = document.querySelector('.music-btn');
 let playGameDiv = document.querySelector('.play-game');
 let question = document.querySelector('.question');
 let choices = document.querySelector('.choices');
-let nextBtn = document.querySelector('.next-btn');
+let nextBtns = document.querySelectorAll('.next-btn');
 let plusScore = document.querySelector('.plus-score');
 let minusScore = document.querySelector('.minus-score');
 const resumeDiv = document.querySelector('.resume-div');
 const resumeBtn = document.querySelector('.resume-btn');
 const restartBtn = document.querySelector('.restart-btn');
+const correctResult = document.querySelector('.correct-result');
+const incorrectResult = document.querySelector('.incorrect-result');
+const noChoice = document.querySelector('.no-choice');
 
 // when user clicks this btn,if it will update player name,also if there is no value inserted it will notify user//
 startGameBtn.addEventListener('click', (event) => {
@@ -70,7 +73,7 @@ yesBtn.addEventListener('click', () => {
     form.style.display = 'flex';
 });
 noBtn.addEventListener('click', () => {
-    mainBoard.style.display = 'none';
+    gameBoard.style.display = 'none';
     // colorBoard.style.display = 'none';
     mainBoard.style.display = 'flex';
 
@@ -78,8 +81,9 @@ noBtn.addEventListener('click', () => {
 });
 //create function goToGameBoard amd we will use this function to go gameBoard when user clicks one of the btns from music movie or sport//
 const goToGameBoard = () => {
-    mainBoard.style.display = 'none';
     gameBoard.style.display = 'flex';
+    mainBoard.style.display = 'none';
+
 
 };
 movieBtn.addEventListener('click', goToGameBoard);
@@ -124,6 +128,7 @@ mainMenuBtn.addEventListener('click', () => {
         colorBoard.style.display = 'none';
         mainBoard.style.display = 'flex';
         questionWindow.style, display = 'flex';
+
 
 
     }
@@ -256,18 +261,22 @@ const getQuestion = () => {
             const choiceTarget = usersChoice.charAt(0);
             if (choiceAttempt < 1) {
                 if (choiceTarget === currentQuestion.correctAnswer) {
+                    correctResult.style.display = 'block';
                     event.target.style.color = 'green';
                     score++;
                     plusScore.innerHTML = score;
                     choiceAttempt++;
                 } else {
+                    incorrectResult.style.display = 'block';
                     event.target.style.color = 'red';
                     noScore++;
                     minusScore.innerHTML = noScore;
                     choiceAttempt++;
                 }
             } else if (choiceAttempt >= 1) {
-                alert('stop');
+                correctResult.style.display = 'none';
+                incorrectResult.style.display = 'none';
+                noChoice.style.display = 'block';
             }
 
         });
@@ -288,13 +297,14 @@ const checkIfFinished = () => {
 
 };
 //next btn//
-nextBtn.addEventListener('click', () => {
-    if (choiceAttempt >= 1) {
-        currentQuestionIndex++;
+for (let nextBtn of nextBtns) {
+    nextBtn.addEventListener('click', () => {
 
+        currentQuestionIndex++;
+        correctResult.style.display = 'none';
+        incorrectResult.style.display = 'none';
+        noChoice.style.display = 'none';
         checkIfFinished();
         getQuestion();
-    } else {
-        alert('please choose answer');
-    }
-});
+    });
+};

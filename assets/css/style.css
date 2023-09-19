@@ -263,6 +263,9 @@ footer {
     background-color: #9f86c0;
     border-radius: 15px;
     display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
 }
 
@@ -387,6 +390,15 @@ label {
 .resume-btn:hover,
 .restart-btn:hover {
     background-color: #f5ebe0;
+}
+
+.correct-result,
+.incorrect-result {
+    display: none;
+}
+
+.no-choice {
+    display: none;
 }
 
 /* make site responsive for tablets */
