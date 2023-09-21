@@ -35,6 +35,10 @@ const incorrectResult = document.querySelector('.incorrect-result');
 const noChoice = document.querySelector('.no-choice');
 const finished = document.querySelector('.finished');
 const finishedText = document.querySelector('.finished-text');
+let currentQuestionIndex = 0;
+let score = 0;
+let noScore = 0;
+let choiceAttempt = 0;
 
 // when user clicks this btn,if it will update player name,also if there is no value inserted it will notify user//
 startGameBtn.addEventListener('click', (event) => {
@@ -90,15 +94,9 @@ noBtn.addEventListener('click', () => {
 
 });
 //create function goToGameBoard amd we will use this function to go gameBoard when user clicks one of the btns from music movie or sport//
-const goToGameBoard = () => {
-    gameBoard.style.display = 'flex';
-    mainBoard.style.display = 'none';
 
-
-};
-movieBtn.addEventListener('click', goToGameBoard);
-sportBtn.addEventListener('click', goToGameBoard);
-musicBtn.addEventListener('click', goToGameBoard);
+// sportBtn.addEventListener('click', goToGameBoard);
+// musicBtn.addEventListener('click', goToGameBoard);
 //this function changes border, to  color div boxes when click//
 const borderChange = (activeBox) => {
     for (let box of boxes) {
@@ -138,7 +136,7 @@ mainMenuBtn.addEventListener('click', () => {
         gameBoard.style.display = 'none';
         colorBoard.style.display = 'none';
         mainBoard.style.display = 'flex';
-        questionWindow.style, display = 'flex';
+        questionWindow.style.display = 'flex';
 
 
 
@@ -163,7 +161,7 @@ for (let restartBtn of restartBtns) {
         questionWindow.style.display = 'block';
         finished.style.display = 'none';
 
-        getQuestion();
+        getQuestion(quizArray);
     });
 };
 resumeBtn.addEventListener('click', () => {
@@ -196,10 +194,7 @@ boxThree.addEventListener('click', () => {
 });
 ///// MAIN GAIM LOGIC////
 // //SPORT//
-let currentQuestionIndex = 0;
-let score = 0;
-let noScore = 0;
-let choiceAttempt = 0;
+
 
 
 const sportQuestions = [
@@ -255,10 +250,117 @@ const sportQuestions = [
     }
 ];
 
+const movieQuestions = [
+    {
+        question: "Which movie features the character Jack Dawson and Rose DeWitt Bukater?",
+        choices: ["A) Titanic", "B) The Shawshank Redemption", "C) Jurassic Park", "D) Avatar"],
+        correctAnswer: "A) Titanic"
+    },
+    {
+        question: "Who played the iconic role of Neo in the Matrix series?",
+        choices: ["A) Keanu Reeves", "B) Tom Hanks", "C) Leonardo DiCaprio", "D) Brad Pitt"],
+        correctAnswer: "A) Keanu Reeves"
+    },
+    {
+        question: "In which film does a young wizard attend Hogwarts School of Witchcraft and Wizardry?",
+        choices: ["A) The Hobbit", "B) Harry Potter and the Sorcerer's Stone", "C) E.T. the Extra-Terrestrial", "D) Star Wars: A New Hope"],
+        correctAnswer: "B) Harry Potter and the Sorcerer's Stone"
+    },
+    {
+        question: "Who directed the 1975 thriller film 'Jaws'?",
+        choices: ["A) George Lucas", "B) Alfred Hitchcock", "C) Steven Spielberg", "D) Quentin Tarantino"],
+        correctAnswer: "C) Steven Spielberg"
+    },
+    {
+        question: "What is the name of the AI computer system in the movie '2001: A Space Odyssey'?",
+        choices: ["A) HAL 9000", "B) R2-D2", "C) C-3PO", "D) WALL-E"],
+        correctAnswer: "A) HAL 9000"
+    },
+    {
+        question: "In which film did Heath Ledger portray the Joker?",
+        choices: ["A) Batman Begins", "B) The Dark Knight", "C) Suicide Squad", "D) Spider-Man"],
+        correctAnswer: "B) The Dark Knight"
+    },
+    {
+        question: "What Pixar film features the adventures of Woody and Buzz Lightyear?",
+        choices: ["A) Finding Nemo", "B) Toy Story", "C) The Incredibles", "D) Monsters, Inc."],
+        correctAnswer: "B) Toy Story"
+    },
+    {
+        question: "Who played the role of Katniss Everdeen in 'The Hunger Games' film series?",
+        choices: ["A) Emma Watson", "B) Jennifer Aniston", "C) Jennifer Lawrence", "D) Kristen Stewart"],
+        correctAnswer: "C) Jennifer Lawrence"
+    },
+    {
+        question: "Which movie is known for the line, 'You can't handle the truth!'?",
+        choices: ["A) A Few Good Men", "B) Saving Private Ryan", "C) Apollo 13", "D) Top Gun"],
+        correctAnswer: "A) A Few Good Men"
+    },
+    {
+        question: "In the film 'Forrest Gump,' what famous phrase does Forrest often say?",
+        choices: ["A) 'I'm the king of the world!'", "B) 'May the Force be with you.'", "C) 'Life is like a box of chocolates.'", "D) 'Here's looking at you, kid.'"],
+        correctAnswer: "C) 'Life is like a box of chocolates.'"
+    }
+];
+
+const musicQuestions = [
+    {
+        question: "Which British rock band released the album 'The Dark Side of the Moon' in 1973?",
+        choices: ["A) The Beatles", "B) Led Zeppelin", "C) Pink Floyd", "D) The Rolling Stones"],
+        correctAnswer: "C) Pink Floyd"
+    },
+    {
+        question: "Who is often referred to as the 'King of Pop'?",
+        choices: ["A) Elvis Presley", "B) Michael Jackson", "C) Prince", "D) Madonna"],
+        correctAnswer: "B) Michael Jackson"
+    },
+    {
+        question: "Which legendary guitarist is known for his rendition of 'The Star-Spangled Banner' at Woodstock in 1969?",
+        choices: ["A) Jimi Hendrix", "B) Eric Clapton", "C) Jimmy Page", "D) Carlos Santana"],
+        correctAnswer: "A) Jimi Hendrix"
+    },
+    {
+        question: "Who is known for the hit song 'Billie Jean'?",
+        choices: ["A) Madonna", "B) Whitney Houston", "C) Tina Turner", "D) Michael Jackson"],
+        correctAnswer: "D) Michael Jackson"
+    },
+    {
+        question: "Which famous rapper's real name is Marshall Bruce Mathers III?",
+        choices: ["A) Jay-Z", "B) Kanye West", "C) Eminem", "D) Snoop Dogg"],
+        correctAnswer: "C) Eminem"
+    },
+    {
+        question: "What music genre is characterized by its use of turntables, sampling, and rapping?",
+        choices: ["A) Jazz", "B) Rock", "C) Hip-hop", "D) Country"],
+        correctAnswer: "C) Hip-hop"
+    },
+    {
+        question: "Which iconic pop group consisted of John Lennon, Paul McCartney, George Harrison, and Ringo Starr?",
+        choices: ["A) The Beach Boys", "B) The Rolling Stones", "C) The Who", "D) The Beatles"],
+        correctAnswer: "D) The Beatles"
+    },
+    {
+        question: "Who released the album 'Rumours' in 1977, featuring hits like 'Go Your Own Way' and 'Dreams'?",
+        choices: ["A) Fleetwood Mac", "B) The Eagles", "C) The Doors", "D) Led Zeppelin"],
+        correctAnswer: "A) Fleetwood Mac"
+    },
+    {
+        question: "Which female artist is known for her album 'Back to Black' and hits like 'Rehab' and 'Valerie'?",
+        choices: ["A) Adele", "B) Beyoncé", "C) Amy Winehouse", "D) Rihanna"],
+        correctAnswer: "C) Amy Winehouse"
+    },
+    {
+        question: "What legendary musician played a guitar known as 'Lucille' and is famous for his blues music?",
+        choices: ["A) B.B. King", "B) Buddy Guy", "C) Eric Clapton", "D) Jimi Hendrix"],
+        correctAnswer: "A) B.B. King"
+    }
+];
 
 
-const getQuestion = () => {
-    let currentQuestion = sportQuestions[currentQuestionIndex];
+const quizArray = [sportQuestions, movieQuestions, musicQuestions];
+const getQuestion = (array) => {
+    let currentQuestion = array[currentQuestionIndex];
+    console.log(currentQuestion.choices);
     question.textContent = currentQuestion.question;
 
     //make sure previos choices not display//
@@ -280,12 +382,14 @@ const getQuestion = () => {
                     score++;
                     plusScore.innerHTML = score;
                     choiceAttempt++;
+
                 } else {
                     incorrectResult.style.display = 'block';
                     event.target.style.color = 'red';
                     noScore++;
                     minusScore.innerHTML = noScore;
                     choiceAttempt++;
+
                 }
             } else if (choiceAttempt >= 1) {
                 correctResult.style.display = 'none';
@@ -297,14 +401,27 @@ const getQuestion = () => {
 
 
 
-    }
+    };
 };
-getQuestion();
+
+
+const goToSportGameBoard = () => {
+    gameBoard.style.display = 'flex';
+    mainBoard.style.display = 'none';
+    // question.style.display = 'block';
+    // choices.style.display = 'flex';
+    // playGameDiv.style.display = 'block';
+    currentQuestionIndex = 0;
+    getQuestion(sportQuestions);
+
+
+};
+sportBtn.addEventListener('click', goToSportGameBoard);
 
 
 //this function checks if there is questions left or not//
-const checkIfFinished = () => {
-    if (currentQuestionIndex === sportQuestions.length) {
+const checkIfFinished = (array) => {
+    if (currentQuestionIndex === array.length) {
         question.style.display = 'none';
         choices.style.display = 'none';
         finished.style.display = 'block';
@@ -316,12 +433,16 @@ const checkIfFinished = () => {
 //next btn//
 for (let nextBtn of nextBtns) {
     nextBtn.addEventListener('click', () => {
-
         currentQuestionIndex++;
-        correctResult.style.display = 'none';
-        incorrectResult.style.display = 'none';
-        noChoice.style.display = 'none';
-        checkIfFinished();
-        getQuestion();
+        if (currentQuestionIndex < quizArray.length) {
+
+            correctResult.style.display = 'none';
+            incorrectResult.style.display = 'none';
+            noChoice.style.display = 'none';
+            getQuestion(quizArray[currentQuestionIndex]);
+        } else {
+            checkIfFinished(quizArray);
+
+        }
     });
 };
