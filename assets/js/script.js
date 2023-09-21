@@ -160,10 +160,14 @@ for (let restartBtn of restartBtns) {
         plusScore.innerHTML = score;
         minusScore.innerHTML = noScore;
         currentQuestionIndex = 0;
+        currentMusicIndex = 0;
+        currentMovieIndex = 0;
         questionWindow.style.display = 'block';
         finished.style.display = 'none';
+        choiceAttempt = 0;
 
-        getQuestion();
+
+
     });
 };
 resumeBtn.addEventListener('click', () => {
@@ -255,110 +259,123 @@ const sportQuestions = [
 const movieQuestions = [
     {
         question: "Which movie features the character Jack Dawson and Rose DeWitt Bukater?",
-        choices: ["A) Titanic", "B) The Shawshank Redemption", "C) Jurassic Park"],
-        correctAnswer: "A) Titanic"
+        choices: ["a) Titanic", "b) The Shawshank Redemption", "c) Jurassic Park"],
+        correctAnswer: "a"
     },
     {
         question: "Who played the iconic role of Neo in the Matrix series?",
-        choices: ["A) Keanu Reeves", "B) Tom Hanks", "C) Leonardo DiCaprio"],
-        correctAnswer: "A) Keanu Reeves"
+        choices: ["a) Keanu Reeves", "b) Tom Hanks", "c) Leonardo DiCaprio"],
+        correctAnswer: "a"
     },
     {
         question: "In which film does a young wizard attend Hogwarts School of Witchcraft and Wizardry?",
-        choices: ["A) The Hobbit", "B) Harry Potter and the Sorcerer's Stone", "C) E.T. the Extra-Terrestrial"],
-        correctAnswer: "B) Harry Potter and the Sorcerer's Stone"
+        choices: ["a) The Hobbit", "b) Harry Potter and the Sorcerer's Stone", "c) E.T. the Extra-Terrestrial"],
+        correctAnswer: "b"
     },
     {
         question: "Who directed the 1975 thriller film 'Jaws'?",
-        choices: ["A) George Lucas", "B) Alfred Hitchcock", "C) Steven Spielberg"],
-        correctAnswer: "C) Steven Spielberg"
+        choices: ["a) George Lucas", "b) Alfred Hitchcock", "c) Steven Spielberg"],
+        correctAnswer: "c"
     },
     {
         question: "What is the name of the AI computer system in the movie '2001: A Space Odyssey'?",
-        choices: ["A) HAL 9000", "B) R2-D2", "C) C-3PO"],
-        correctAnswer: "A) HAL 9000"
+        choices: ["a) HAL 9000", "b) R2-D2", "c) C-3PO"],
+        correctAnswer: "a"
     },
     {
         question: "In which film did Heath Ledger portray the Joker?",
-        choices: ["A) Batman Begins", "B) The Dark Knight", "C) Suicide Squad"],
-        correctAnswer: "B) The Dark Knight"
+        choices: ["a) Batman Begins", "b) The Dark Knight", "c) Suicide Squad"],
+        correctAnswer: "b"
     },
     {
         question: "What Pixar film features the adventures of Woody and Buzz Lightyear?",
-        choices: ["A) Finding Nemo", "B) Toy Story", "C) The Incredibles"],
-        correctAnswer: "B) Toy Story"
+        choices: ["a) Finding Nemo", "b) Toy Story", "c) The Incredibles"],
+        correctAnswer: "b"
     },
     {
         question: "Who played the role of Katniss Everdeen in 'The Hunger Games' film series?",
-        choices: ["A) Emma Watson", "B) Jennifer Aniston", "C) Jennifer Lawrence"],
-        correctAnswer: "C) Jennifer Lawrence"
+        choices: ["a) Emma Watson", "b) Jennifer Aniston", "c) Jennifer Lawrence"],
+        correctAnswer: "c"
     },
     {
         question: "Which movie is known for the line, 'You can't handle the truth!'?",
-        choices: ["A) A Few Good Men", "B) Saving Private Ryan", "C) Apollo 13"],
-        correctAnswer: "A) A Few Good Men"
+        choices: ["a) A Few Good Men", "b) Saving Private Ryan", "c) Apollo 13"],
+        correctAnswer: "a"
     },
     {
         question: "In the film 'Forrest Gump,' what famous phrase does Forrest often say?",
-        choices: ["A) 'I'm the king of the world!'", "B) 'May the Force be with you.'", "C) 'Life is like a box of chocolates.'"],
-        correctAnswer: "C) 'Life is like a box of chocolates.'"
+        choices: ["a) 'I'm the king of the world!'", "b) 'May the Force be with you.'", "c) 'Life is like a box of chocolates.'"],
+        correctAnswer: "c"
     }
 ];
 
 const musicQuestions = [
     {
         question: "Which British rock band released the album 'The Dark Side of the Moon' in 1973?",
-        choices: ["A) The Beatles", "B) Led Zeppelin", "C) Pink Floyd"],
-        correctAnswer: "C) Pink Floyd"
+        choices: ["c) The Beatles", "b) Led Zeppelin", "c) Pink Floyd"],
+        correctAnswer: "c"
     },
     {
         question: "Who is often referred to as the 'King of Pop'?",
-        choices: ["A) Elvis Presley", "B) Michael Jackson", "C) Prince"],
-        correctAnswer: "B) Michael Jackson"
+        choices: ["c) Elvis Presley", "b) Michael Jackson", "c) Prince"],
+        correctAnswer: "b"
     },
     {
         question: "Which legendary guitarist is known for his rendition of 'The Star-Spangled Banner' at Woodstock in 1969?",
-        choices: ["A) Jimi Hendrix", "B) Eric Clapton", "C) Jimmy Page"],
-        correctAnswer: "A) Jimi Hendrix"
+        choices: ["a) Jimi Hendrix", "b) Eric Clapton", "c) Jimmy Page"],
+        correctAnswer: "a"
     },
     {
         question: "Who is known for the hit song 'Billie Jean'?",
-        choices: ["A) Madonna", "B) Whitney Houston", "C) Michael Jackson "],
-        correctAnswer: "C) Michael Jackson"
+        choices: ["a) Madonna", "b) Whitney Houston", "c) Michael Jackson "],
+        correctAnswer: "c"
     },
     {
         question: "Which famous rapper's real name is Marshall Bruce Mathers III?",
-        choices: ["A) Jay-Z", "B) Kanye West", "C) Eminem"],
-        correctAnswer: "C) Eminem"
+        choices: ["a) Jay-Z", "b) Kanye West", "c) Eminem"],
+        correctAnswer: "c"
     },
     {
         question: "What music genre is characterized by its use of turntables, sampling, and rapping?",
-        choices: ["A) Jazz", "B) Rock", "C) Hip-hop"],
-        correctAnswer: "C) Hip-hop"
+        choices: ["a) Jazz", "b) Rock", "c) Hip-hop"],
+        correctAnswer: "c"
     },
     {
         question: "Which iconic pop group consisted of John Lennon, Paul McCartney, George Harrison, and Ringo Starr?",
-        choices: ["A) The Beach Boys", "B) The Rolling Stones", "C) The Beatles"],
-        correctAnswer: "C) The Beatles"
+        choices: ["a) The Beach Boys", "b) The Rolling Stones", "c) The Beatles"],
+        correctAnswer: "c"
     },
     {
         question: "Who released the album 'Rumours' in 1977, featuring hits like 'Go Your Own Way' and 'Dreams'?",
-        choices: ["A) Fleetwood Mac", "B) The Eagles", "C) The Doors"],
-        correctAnswer: "A) Fleetwood Mac"
+        choices: ["a) Fleetwood Mac", "b) The Eagles", "c) The Doors"],
+        correctAnswer: "a"
     },
     {
         question: "Which female artist is known for her album 'Back to Black' and hits like 'Rehab' and 'Valerie'?",
-        choices: ["A) Adele", "B) Beyoncé", "C) Amy Winehouse"],
-        correctAnswer: "C) Amy Winehouse"
+        choices: ["a) Adele", "b) Beyoncé", "c) Amy Winehouse"],
+        correctAnswer: "c"
     },
     {
         question: "What legendary musician played a guitar known as 'Lucille' and is famous for his blues music?",
-        choices: ["A) B.B. King", "B) Buddy Guy", "C) Eric Clapton"],
-        correctAnswer: "A) B.B. King"
+        choices: ["a) B.B. King", "b) Buddy Guy", "c) Eric Clapton"],
+        correctAnswer: "a"
     }
 ];
 
+const checkIfFinished = () => {
+    question.style.display = 'none';
+    choices.style.display = 'none';
+    finished.style.display = 'block';
+    if (currentQuestionIndex === sportQuestions.length) {
+        finishedText.textContent = `Game Finished! Thanks for playing. you answered ${score} answers correctly`;
 
+    } else if (currentMusicIndex === musicQuestions.length) {
+        finishedText.textContent = `Game Finished! Thanks for playing. you answered ${score} answers correctly`;
+    } else if (currentMovieIndex === movieQuestions.length) {
+        finishedText.textContent = `Game Finished! Thanks for playing. you answered ${score} answers correctly`;
+    }
+
+};
 
 const getSportQuestion = () => {
 
@@ -406,10 +423,10 @@ const getSportQuestion = () => {
 
             });
         }
-    }
-    else {
+    } else {
         checkIfFinished();
     }
+
 };
 getSportQuestion();
 const getMovieQuestion = () => {
@@ -521,7 +538,8 @@ getMusicQuestion();
 
 
 musicBtn.addEventListener('click', () => {
-
+    currentQuestionIndex = 10;
+    currentMovieIndex = 10;
     currentMusicIndex = 0;
     score = 0;
     noScore = 0;
@@ -532,17 +550,34 @@ musicBtn.addEventListener('click', () => {
     mainBoard.style.display = 'none';
     getMusicQuestion();
 });
+movieBtn.addEventListener('click', () => {
+    currentQuestionIndex = 10;
+    currentMusicIndex = 10;
+    currentMovieIndex = 0;
+    score = 0;
+    noScore = 0;
+    plusScore.innerHTML = score;
+    minusScore.innerHTML = noScore;
+    playerName.textContent = userName.value;
+    gameBoard.style.display = 'flex';
+    mainBoard.style.display = 'none';
+    getMovieQuestion();
+});
+sportBtn.addEventListener('click', () => {
+    currentQuestionIndex = 0;
+    currentMusicIndex = 10;
+    currentMovieIndex = 10;
+    score = 0;
+    noScore = 0;
+    plusScore.innerHTML = score;
+    minusScore.innerHTML = noScore;
+    playerName.textContent = userName.value;
+    gameBoard.style.display = 'flex';
+    mainBoard.style.display = 'none';
+    getSportQuestion();
+});
 //this function checks if there is questions left or not//
-const checkIfFinished = () => {
-    if (currentQuestionIndex === sportQuestions.length) {
-        question.style.display = 'none';
-        choices.style.display = 'none';
-        finished.style.display = 'block';
-        finishedText.textContent = `Game Finished! Thanks for playing. you answered ${score} answers correctly`;
 
-    }
-
-};
 //next btn//
 for (let nextBtn of nextBtns) {
     nextBtn.addEventListener('click', () => {
