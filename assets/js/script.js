@@ -29,7 +29,7 @@ let plusScore = document.querySelector('.plus-score');
 let minusScore = document.querySelector('.minus-score');
 const resumeDiv = document.querySelector('.resume-div');
 const resumeBtn = document.querySelector('.resume-btn');
-const restartBtns = document.querySelectorAll('.restart-btn');
+const restartBtn = document.querySelector('.restart-btn');
 const correctResult = document.querySelector('.correct-result');
 const incorrectResult = document.querySelector('.incorrect-result');
 const noChoice = document.querySelector('.no-choice');
@@ -85,6 +85,8 @@ yesBtn.addEventListener('click', () => {
     questionWindow.style.display = 'none';
     playDiv.style.display = 'block';
     form.style.display = 'flex';
+    question.style.display = 'none';
+    choices.style.display = 'none';
 
 
 });
@@ -124,55 +126,52 @@ menuBtn.addEventListener('click', () => {
 });
 
 mainMenuBtn.addEventListener('click', () => {
-    if (currentQuestionIndex > 0 && currentMovieIndex > 0 && currentMusicIndex > 0) {
-        gameBoard.style.display = 'none';
-        colorBoard.style.display = 'none';
-        mainBoard.style.display = 'flex';
 
-        playDiv.style.display = 'block';
+    gameBoard.style.display = 'none';
+    // colorBoard.style.display = 'none';
+    mainBoard.style.display = 'flex';
+    userName.value = '';
+    playDiv.style.display = 'none';
 
-        playGameDiv.style.display = 'none';
-        resumeDiv.style.display = 'flex';
-        finished.style.display = 'none';
-
-    } else {
-        gameBoard.style.display = 'none';
-        colorBoard.style.display = 'none';
-        mainBoard.style.display = 'flex';
-        questionWindow.style.display = 'block';
-        playDiv.style.display = 'none';
-
-
-
-
-
-    }
-
-
-
-
-
-});
-
-
-resumeBtn.addEventListener('click', () => {
-    resumeDiv.style.display = 'none';
     playGameDiv.style.display = 'block';
-    console.log('clicked');
-    if (currentCategory === sportQuestions) {
+    correctResult.style.display = 'none';
+    incorrectResult.style.display = 'none';
+    // resumeDiv.style.display = 'flex';
+    finished.style.display = 'none';
+    questionWindow.style.display = 'block';
 
-        getSportQuestion();
 
-    } else if (currentCategory === musicQuestions) {
 
-        getMusicQuestion();
 
-    } else if (currentCategory === movieQuestions) {
 
-        getMovieQuestion();
 
-    }
+
+
+
+
+
+
 });
+
+
+// resumeBtn.addEventListener('click', () => {
+//     resumeDiv.style.display = 'none';
+//     playGameDiv.style.display = 'block';
+//     console.log('clicked');
+//     if (currentCategory === sportQuestions) {
+
+//         getSportQuestion();
+
+//     } else if (currentCategory === musicQuestions) {
+
+//         getMusicQuestion();
+
+//     } else if (currentCategory === movieQuestions) {
+
+//         getMovieQuestion();
+
+//     }
+// });
 //add eventListeners to boxes to change color//
 boxOne.addEventListener('click', () => {
     mainBoard.style.backgroundColor = ' #fca311';
@@ -535,39 +534,38 @@ const getMusicQuestion = () => {
 
 getMusicQuestion();
 
-for (let restartBtn of restartBtns) {
-    restartBtn.addEventListener('click', () => {
-        playDiv.style.display = 'none';
-        resumeDiv.style.display = 'none';
-        playerName.textContent = '';
-        userName.value = "";
-        score = 0;
-        noScore = 0;
-        plusScore.innerHTML = score;
-        minusScore.innerHTML = noScore;
-        // currentQuestionIndex = 0;
-        // currentMusicIndex = 0;
-        // currentMovieIndex = 0;
-        questionWindow.style.display = 'block';
-        finished.style.display = 'none';
-        choiceAttempt = 0;
-        if (currentCategory === sportQuestions) {
-            currentQuestionIndex = 0;
-            getSportQuestion();
-            console.log(sportQuestions);
-        } else if (currentCategory === musicQuestions) {
-            currentMusicIndex = 0;
-            getMusicQuestion();
 
-            console.log(musicQuestions);
-        } else if (currentCategory === movieQuestions) {
-            currentMovieIndex = 0;
-            getMovieQuestion();
-        }
+restartBtn.addEventListener('click', () => {
+    playDiv.style.display = 'none';
+    // resumeDiv.style.display = 'none';
+    playerName.textContent = '';
+    userName.value = "";
+    score = 0;
+    noScore = 0;
+    plusScore.innerHTML = score;
+    minusScore.innerHTML = noScore;
+    // currentQuestionIndex = 0;
+    // currentMusicIndex = 0;
+    // currentMovieIndex = 0;
+    questionWindow.style.display = 'block';
+    finished.style.display = 'none';
+    choiceAttempt = 0;
+    if (currentCategory === sportQuestions) {
+        currentQuestionIndex = 0;
+        getSportQuestion();
+        console.log(sportQuestions);
+    } else if (currentCategory === musicQuestions) {
+        currentMusicIndex = 0;
+        getMusicQuestion();
+
+        console.log(musicQuestions);
+    } else if (currentCategory === movieQuestions) {
+        currentMovieIndex = 0;
+        getMovieQuestion();
+    }
 
 
-    });
-};
+});
 
 musicBtn.addEventListener('click', () => {
     currentQuestionIndex = 10;
