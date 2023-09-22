@@ -124,7 +124,7 @@ menuBtn.addEventListener('click', () => {
 });
 
 mainMenuBtn.addEventListener('click', () => {
-    if (currentQuestionIndex >= 0) {
+    if (currentQuestionIndex > 0 && currentMovieIndex > 0 && currentMusicIndex > 0) {
         gameBoard.style.display = 'none';
         colorBoard.style.display = 'none';
         mainBoard.style.display = 'flex';
@@ -134,11 +134,15 @@ mainMenuBtn.addEventListener('click', () => {
         playGameDiv.style.display = 'none';
         resumeDiv.style.display = 'flex';
         finished.style.display = 'none';
+
     } else {
         gameBoard.style.display = 'none';
         colorBoard.style.display = 'none';
         mainBoard.style.display = 'flex';
-        questionWindow.style.display = 'flex';
+        questionWindow.style.display = 'block';
+        playDiv.style.display = 'none';
+
+
 
 
 
@@ -149,30 +153,25 @@ mainMenuBtn.addEventListener('click', () => {
 
 
 });
-for (let restartBtn of restartBtns) {
-    restartBtn.addEventListener('click', () => {
-        playDiv.style.display = 'none';
-        resumeDiv.style.display = 'none';
-        playerName.textContent = '';
-        userName.value = "";
-        score = 0;
-        noScore = 0;
-        plusScore.innerHTML = score;
-        minusScore.innerHTML = noScore;
-        currentQuestionIndex = 0;
-        currentMusicIndex = 0;
-        currentMovieIndex = 0;
-        questionWindow.style.display = 'block';
-        finished.style.display = 'none';
-        choiceAttempt = 0;
 
 
-
-    });
-};
 resumeBtn.addEventListener('click', () => {
     resumeDiv.style.display = 'none';
     playGameDiv.style.display = 'block';
+    console.log('clicked');
+    if (currentCategory === sportQuestions) {
+
+        getSportQuestion();
+
+    } else if (currentCategory === musicQuestions) {
+
+        getMusicQuestion();
+
+    } else if (currentCategory === movieQuestions) {
+
+        getMovieQuestion();
+
+    }
 });
 //add eventListeners to boxes to change color//
 boxOne.addEventListener('click', () => {
@@ -361,6 +360,7 @@ const musicQuestions = [
         correctAnswer: "a"
     }
 ];
+let currentCategory = sportQuestions;
 
 const checkIfFinished = () => {
     question.style.display = 'none';
@@ -383,7 +383,7 @@ const getSportQuestion = () => {
         let currentQuestion = sportQuestions[currentQuestionIndex];
         // console.log(currentQuestion.choices);
         question.textContent = currentQuestion.question;
-
+        currentCategory = sportQuestions;
         //make sure previos choices not display//
         choiceAttempt = 0;
         choices.innerHTML = '';
@@ -435,7 +435,7 @@ const getMovieQuestion = () => {
         let currentQuestion = movieQuestions[currentMovieIndex];
         // console.log(currentQuestion.choices);
         question.textContent = currentQuestion.question;
-
+        currentCategory = movieQuestions;
         //make sure previos choices not display//
         choiceAttempt = 0;
         choices.innerHTML = '';
@@ -489,7 +489,7 @@ const getMusicQuestion = () => {
         let currentQuestion = musicQuestions[currentMusicIndex];
         // console.log(currentQuestion.choices);
         question.textContent = currentQuestion.question;
-
+        currentCategory = musicQuestions;
         //make sure previos choices not display//
         choiceAttempt = 0;
         choices.innerHTML = '';
@@ -535,7 +535,39 @@ const getMusicQuestion = () => {
 
 getMusicQuestion();
 
+for (let restartBtn of restartBtns) {
+    restartBtn.addEventListener('click', () => {
+        playDiv.style.display = 'none';
+        resumeDiv.style.display = 'none';
+        playerName.textContent = '';
+        userName.value = "";
+        score = 0;
+        noScore = 0;
+        plusScore.innerHTML = score;
+        minusScore.innerHTML = noScore;
+        // currentQuestionIndex = 0;
+        // currentMusicIndex = 0;
+        // currentMovieIndex = 0;
+        questionWindow.style.display = 'block';
+        finished.style.display = 'none';
+        choiceAttempt = 0;
+        if (currentCategory === sportQuestions) {
+            currentQuestionIndex = 0;
+            getSportQuestion();
+            console.log(sportQuestions);
+        } else if (currentCategory === musicQuestions) {
+            currentMusicIndex = 0;
+            getMusicQuestion();
 
+            console.log(musicQuestions);
+        } else if (currentCategory === movieQuestions) {
+            currentMovieIndex = 0;
+            getMovieQuestion();
+        }
+
+
+    });
+};
 
 musicBtn.addEventListener('click', () => {
     currentQuestionIndex = 10;
