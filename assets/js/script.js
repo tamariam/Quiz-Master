@@ -52,9 +52,10 @@ startGameBtn.addEventListener('click', (event) => {
         let newPlayerName = userName.value;
         playerName.textContent = newPlayerName;
         playGameDiv.style.display = 'block';
-        playDiv.style.height = '50%';
+        playDiv.style.height = '350px';
         question.style.display = 'block';
         choices.style.display = 'flex';
+
 
 
     }
@@ -72,7 +73,7 @@ userName.addEventListener('keydown', (event) => {
             let newPlayerName = userName.value;
             playerName.textContent = newPlayerName;
             playGameDiv.style.display = 'block';
-            playDiv.style.height = '50%';
+            playDiv.style.height = '450px';
             question.style.display = 'block';
             choices.style.display = 'flex';
 
@@ -83,7 +84,7 @@ userName.addEventListener('keydown', (event) => {
 yesBtn.addEventListener('click', () => {
     userScoresDiv.style.visibility = 'visible';
     questionWindow.style.display = 'none';
-    playDiv.style.display = 'block';
+    playDiv.style.display = 'flex';
     form.style.display = 'flex';
     question.style.display = 'none';
     choices.style.display = 'none';
@@ -132,11 +133,12 @@ mainMenuBtn.addEventListener('click', () => {
     mainBoard.style.display = 'flex';
     userName.value = '';
     playDiv.style.display = 'none';
+    playDiv.style.height = '200px';
+    noChoice.style.display = 'none';
 
     playGameDiv.style.display = 'block';
     correctResult.style.display = 'none';
     incorrectResult.style.display = 'none';
-    // resumeDiv.style.display = 'flex';
     finished.style.display = 'none';
     questionWindow.style.display = 'block';
 
@@ -267,7 +269,7 @@ const movieQuestions = [
     },
     {
         question: "In which film does a young wizard attend Hogwarts School of Witchcraft and Wizardry?",
-        choices: ["a) The Hobbit", "b) Harry Potter and the Sorcerer's Stone", "c) E.T. the Extra-Terrestrial"],
+        choices: ["a) The Hobbit", "b) Harry Potter", "c) E.T. the Extra-Terrestrial"],
         correctAnswer: "b"
     },
     {
@@ -405,7 +407,7 @@ const getSportQuestion = () => {
 
                     } else {
                         incorrectResult.style.display = 'block';
-                        event.target.style.color = 'red';
+                        event.target.style.color = '#9a031e';
                         noScore++;
                         minusScore.innerHTML = noScore;
                         choiceAttempt++;
@@ -457,7 +459,7 @@ const getMovieQuestion = () => {
 
                     } else {
                         incorrectResult.style.display = 'block';
-                        event.target.style.color = 'red';
+                        event.target.style.color = '#9a031e';
                         noScore++;
                         minusScore.innerHTML = noScore;
                         choiceAttempt++;
@@ -511,7 +513,7 @@ const getMusicQuestion = () => {
 
                     } else {
                         incorrectResult.style.display = 'block';
-                        event.target.style.color = 'red';
+                        event.target.style.color = '#9a031e';
                         noScore++;
                         minusScore.innerHTML = noScore;
                         choiceAttempt++;
@@ -544,6 +546,7 @@ restartBtn.addEventListener('click', () => {
     noScore = 0;
     plusScore.innerHTML = score;
     minusScore.innerHTML = noScore;
+    playDiv.style.height = '30%';
     // currentQuestionIndex = 0;
     // currentMusicIndex = 0;
     // currentMovieIndex = 0;

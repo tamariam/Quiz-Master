@@ -177,10 +177,10 @@ footer {
 
 .main-div {
     width: 95vw;
-    height: 70vh;
+    height: 75vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     background-color: #fca311;
     padding-bottom: 10px;
@@ -190,8 +190,12 @@ footer {
 }
 
 .question-window {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 85%;
-    height: 25%;
+    height: 150px;
     background-color: #9f86c0;
     border-radius: 15px;
 
@@ -259,19 +263,21 @@ footer {
 
 .play-div {
     width: 90%;
-    height: 25%;
+    /* height: 33%; */
     background-color: #9f86c0;
     border-radius: 15px;
     display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
 
 }
 
 
 
 #form {
+
     display: Flex;
     flex-direction: column;
     font-family: 'Oswald', sans-serif;
@@ -279,6 +285,7 @@ footer {
     align-items: center;
     font-weight: 500;
     gap: 15px;
+    padding: 10px 0;
 
 }
 
@@ -288,7 +295,7 @@ footer {
     padding: 9px 0;
     border: none;
     border-radius: 9px;
-    width: 60%;
+    width: 70%;
     text-align: Center;
 
 }
@@ -344,32 +351,27 @@ label {
 .question {
     font-family: 'Oswald', sans-serif;
     font-weight: 500;
+    font-size: 20px;
+    text-align: center;
+    color: #0d1321;
+
+}
+
+.choices span {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
     font-size: 18px;
     text-align: center;
-
-}
-
-.choice-btns {
+    color: #0d1321;
     cursor: pointer;
-    font-family: 'Oswald', sans-serif;
-    font-weight: 500;
-    font-size: 20px;
-}
-
-.resume-div {
-
-    width: 100%;
-    height: 100%;
-    display: none;
-    background-color: #0a9396;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    border-radius: 15px;
 
 }
 
-.resume-btn,
+
+
+
+
+.next-btn,
 .restart-btn {
     width: 130px;
     padding: 10px 0;
@@ -385,23 +387,27 @@ label {
 
 }
 
-.resume-btn:hover,
+
+
+.next-btn,
 .restart-btn:hover {
     background-color: #f5ebe0;
 }
 
 .correct-result,
-.incorrect-result {
-    display: none;
-}
-
-.no-choice {
-    display: none;
-}
-
+.incorrect-result,
+.no-choice,
 .finished {
     display: none;
+    font-size: 18px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    text-align: center;
+    color: #9a031e;
 }
+
+
+
 
 /* make site responsive for tablets */
 @media screen and (min-width: 768px) {
@@ -470,12 +476,16 @@ label {
 
     }
 
+    .username {
+        width: 80%;
+    }
+
     .btn-container {
         gap: 35px;
     }
 
     .window-btn {
-        width: 120px;
+        width: 150px;
         font-size: 20px;
         font-weight: 500;
 
@@ -515,6 +525,38 @@ label {
         font-size: 22px;
     }
 
+    .question {
+
+        font-size: 22px;
+
+
+    }
+
+    .choices span {
+
+        font-size: 20px;
+
+
+    }
+
+    .correct-result,
+    .incorrect-result,
+    .no-choice,
+    .finished {
+
+        font-size: 20px;
+
+    }
+
+    .next-btn,
+    .restart-btn {
+        width: 150px;
+        font-size: 20px;
+
+
+
+
+    }
 
 }
 
@@ -584,6 +626,7 @@ label {
     }
 
     .question-window h2 {
+        width: 90%;
         font-size: 35px;
 
 
@@ -595,7 +638,7 @@ label {
     }
 
     .window-btn {
-        width: 130px;
+        width: 170px;
         font-size: 22px;
 
     }
@@ -604,7 +647,7 @@ label {
 
     #username {
         font-size: 22px;
-
+        width: 85%;
     }
 
     label {
@@ -627,6 +670,52 @@ label {
 
     .score {
         font-size: 24px;
+    }
+
+    .question {
+
+        font-size: 24px;
+
+
+    }
+
+    .choices span {
+
+        font-size: 22px;
+
+
+    }
+
+    .correct-result,
+    .incorrect-result,
+    .no-choice,
+    .finished {
+
+        font-size: 22px;
+
+    }
+
+    .next-btn,
+    .restart-btn {
+        width: 165px;
+        font-size: 22px;
+        text-transform: uppercase;
+
+
+
+
+    }
+
+    .play-div {
+        width: 90%;
+    }
+
+    .main-div {
+        height: 100vh;
+    }
+
+    .username {
+        width: 90%;
     }
 
 }
