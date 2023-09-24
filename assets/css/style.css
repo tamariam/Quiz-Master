@@ -635,12 +635,11 @@ label {
         width: 90%;
     }
 
-    .main-div {
-        height: 100vh;
-    }
-
     .username {
         width: 90%;
     }
 
+    .main-div {
+        min-height: 100vh;
+    }
 }

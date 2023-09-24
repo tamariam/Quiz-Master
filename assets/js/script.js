@@ -1,7 +1,7 @@
-//get elements//
-const boxOne = document.querySelector("#box-1");
-const boxTwo = document.querySelector("#box-2");
-const boxThree = document.querySelector('#box-3');
+//get global variables//
+const themeOne = document.querySelector("#box-1");
+const themeTwo = document.querySelector("#box-2");
+const themeThree = document.querySelector('#box-3');
 const menuBtn = document.querySelector('.colors-menu');
 const mainMenuBtn = document.querySelector('.menubtn-btn');
 const yesBtn = document.querySelector('.yes-btn');
@@ -27,22 +27,57 @@ const choices = document.querySelector('.choices');
 const nextBtns = document.querySelectorAll('.next-btn');
 const plusScore = document.querySelector('.plus-score');
 const minusScore = document.querySelector('.minus-score');
-const resumeDiv = document.querySelector('.resume-div');
-const resumeBtn = document.querySelector('.resume-btn');
 const restartBtn = document.querySelector('.restart-btn');
 const correctResult = document.querySelector('.correct-result');
 const incorrectResult = document.querySelector('.incorrect-result');
 const noChoice = document.querySelector('.no-choice');
 const finished = document.querySelector('.finished');
 const finishedText = document.querySelector('.finished-text');
+let currentCategory = sportQuestions;
 let currentQuestionIndex = 0;
 let currentMusicIndex = 0;
 let currentMovieIndex = 0;
 let score = 0;
 let noScore = 0;
 let choiceAttempt = 0;
-
-// when user clicks this btn,if it will update player name,also if there is no value inserted it will notify user//
+/**  when user click menuBtn ,mainBoard will display and colorBoard disapears*/
+menuBtn.addEventListener('click', () => {
+    gameBoard.style.display = 'none';
+    colorBoard.style.display = 'none';
+    mainBoard.style.display = 'flex';
+    playDiv.style.display = 'none';
+});
+/**when user is already in playdiv and getting ready for game if  clicks to menu btn this actions happen */
+mainMenuBtn.addEventListener('click', () => {
+    gameBoard.style.display = 'none';
+    mainBoard.style.display = 'flex';
+    userName.value = '';
+    playDiv.style.display = 'none';
+    playDiv.style.height = '200px';
+    noChoice.style.display = 'none';
+    playGameDiv.style.display = 'block';
+    correctResult.style.display = 'none';
+    incorrectResult.style.display = 'none';
+    finished.style.display = 'none';
+    questionWindow.style.display = 'flex';
+});
+/** when user choose one of the category to play firstly the question will apppear asking user if he/she is ready for game or not, he/she can choose one of the btns .if user clicks yesbtn
+ another window will display who asks user to create username*/
+yesBtn.addEventListener('click', () => {
+    userScoresDiv.style.visibility = 'visible';
+    questionWindow.style.display = 'none';
+    playDiv.style.display = 'flex';
+    form.style.display = 'flex';
+    question.style.display = 'none';
+    choices.style.display = 'none';
+});
+//When the user clicks the 'noBtn,' it will go back to the main menu.
+noBtn.addEventListener('click', () => {
+    gameBoard.style.display = 'none';
+    mainBoard.style.display = 'flex';
+});
+/**  add eventlisteners to startGamebtn when user clicks this btn,  game will start, it will update player name,also if there is no
+ *  value inserted it will notify user*/
 startGameBtn.addEventListener('click', (event) => {
     event.preventDefault();
     if (userName.value === '') {
@@ -55,54 +90,32 @@ startGameBtn.addEventListener('click', (event) => {
         playDiv.style.height = '350px';
         question.style.display = 'block';
         choices.style.display = 'flex';
-
-
-
     }
 });
-// same functionality as startGameBtn//
+// same functionality as startGameBtn, difference is that user should press enter key//
 userName.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
         event.preventDefault();
-
         if (userName.value === '') {
-
             userName.style.border = '1px solid red';
         } else {
             form.style.display = 'none';
             let newPlayerName = userName.value;
             playerName.textContent = newPlayerName;
             playGameDiv.style.display = 'block';
-            playDiv.style.height = '450px';
+            playDiv.style.height = '350px';
             question.style.display = 'block';
             choices.style.display = 'flex';
-
         }
     }
 });
-// when user clicks yes,new div will open where user should create username//
-yesBtn.addEventListener('click', () => {
-    userScoresDiv.style.visibility = 'visible';
-    questionWindow.style.display = 'none';
-    playDiv.style.display = 'flex';
-    form.style.display = 'flex';
-    question.style.display = 'none';
-    choices.style.display = 'none';
-
+/**add eventlistener to colorOptions , when user press colorOptions btn on mainBoard, mainBoard disapaears and colorBoard displays.*/
+colorOptions.addEventListener('click', () => {
+    mainBoard.style.display = 'none';
+    colorBoard.style.display = 'flex';
 
 });
-noBtn.addEventListener('click', () => {
-    gameBoard.style.display = 'none';
-    // colorBoard.style.display = 'none';
-    mainBoard.style.display = 'flex';
-
-
-});
-//create function goToGameBoard amd we will use this function to go gameBoard when user clicks one of the btns from music movie or sport//
-
-// sportBtn.addEventListener('click', goToGameBoard);
-// musicBtn.addEventListener('click', goToGameBoard);
-//this function changes border, to  color div boxes when click//
+/** This functions are for color option, firstly create one function wich will  handle activation of  specific theme option */
 const borderChange = (activeBox) => {
     for (let box of boxes) {
         if (box !== activeBox) {
@@ -111,52 +124,8 @@ const borderChange = (activeBox) => {
     }
     activeBox.classList.add('active');
 };
-//add eventlistener to colorOptions , when user press colorOptions btn on mainBoard, mainBoard disapaears and colorBoard displays.//
-colorOptions.addEventListener('click', () => {
-    mainBoard.style.display = 'none';
-    colorBoard.style.display = 'flex';
-
-});
-//  when user click menuBtn ,mainBoard will display and colorBoard disapears//
-menuBtn.addEventListener('click', () => {
-    gameBoard.style.display = 'none';
-    colorBoard.style.display = 'none';
-    mainBoard.style.display = 'flex';
-    playDiv.style.display = 'none';
-
-});
-
-mainMenuBtn.addEventListener('click', () => {
-
-    gameBoard.style.display = 'none';
-    // colorBoard.style.display = 'none';
-    mainBoard.style.display = 'flex';
-    userName.value = '';
-    playDiv.style.display = 'none';
-    playDiv.style.height = '200px';
-    noChoice.style.display = 'none';
-
-    playGameDiv.style.display = 'block';
-    correctResult.style.display = 'none';
-    incorrectResult.style.display = 'none';
-    finished.style.display = 'none';
-    questionWindow.style.display = 'flex';
-
-
-
-
-
-
-
-
-
-
-
-
-});
-
-//add eventListeners to boxes to change color//
-boxOne.addEventListener('click', () => {
+//add eventListeners to each themes to change color//
+themeOne.addEventListener('click', () => {
     mainBoard.style.backgroundColor = ' #fca311';
     document.body.style.backgroundColor = ' #ffcdb2';
     colorBoard.style.backgroundColor = '#fca311';
@@ -164,14 +133,14 @@ boxOne.addEventListener('click', () => {
     borderChange(boxOne);
 
 });
-boxTwo.addEventListener('click', () => {
+themeTwo.addEventListener('click', () => {
     mainBoard.style.backgroundColor = '#e76f51';
     document.body.style.backgroundColor = '#cdb4db';
     colorBoard.style.backgroundColor = '#e76f51';
     gameBoard.style.backgroundColor = '#e76f51';
     borderChange(boxTwo);
 });
-boxThree.addEventListener('click', () => {
+themeThree.addEventListener('click', () => {
     mainBoard.style.backgroundColor = '#bb3e03';
     document.body.style.backgroundColor = '#ffd670';
     colorBoard.style.backgroundColor = '#bb3e03';
@@ -179,11 +148,8 @@ boxThree.addEventListener('click', () => {
     borderChange(boxThree);
 
 });
-///// MAIN GAIM LOGIC////
-// //SPORT//
-
-
-
+//main game
+//get sportQuestions Array
 const sportQuestions = [
     {
         question: "Who holds the record for the most goals scored in a single FIFA World Cup tournament?",
@@ -236,7 +202,7 @@ const sportQuestions = [
         correctAnswer: "c"
     }
 ];
-
+//movie questions Array
 const movieQuestions = [
     {
         question: "Which movie features the character Jack Dawson and Rose DeWitt Bukater?",
@@ -289,7 +255,7 @@ const movieQuestions = [
         correctAnswer: "c"
     }
 ];
-
+//music questions Array
 const musicQuestions = [
     {
         question: "Which British rock band released the album 'The Dark Side of the Moon' in 1973?",
@@ -342,8 +308,7 @@ const musicQuestions = [
         correctAnswer: "a"
     }
 ];
-let currentCategory = sportQuestions;
-
+/**this function checks if there  left any questions or not */
 const checkIfFinished = () => {
     question.style.display = 'none';
     choices.style.display = 'none';
@@ -358,26 +323,27 @@ const checkIfFinished = () => {
     }
 
 };
-
+/**with this function user will be able to get relevant questions when clicks sportsbtn */
 const getSportQuestion = () => {
-
+    //firstly we check if there is questions left, then we get current questions from sportquestions and then update it to html
     if (currentQuestionIndex < sportQuestions.length) {
         let currentQuestion = sportQuestions[currentQuestionIndex];
-        // console.log(currentQuestion.choices);
         question.textContent = currentQuestion.question;
         currentCategory = sportQuestions;
-        //make sure previos choices not display//
         choiceAttempt = 0;
         choices.innerHTML = '';
-        //create  choicelist//
+        //create  choicelist
         for (let choice of currentQuestion.choices) {
+            //we loop through in choices array  and create span element to update them in html
             let choiceList = document.createElement('span');
             choiceList.classList.add('choice-btns');
             choiceList.textContent = choice;
             choices.appendChild(choiceList);
+            //we add eventlisteners to choices to find out if user choose correct or incorrect  answer
             choiceList.addEventListener('click', (event) => {
                 const usersChoice = event.target.textContent;
                 const choiceTarget = usersChoice.charAt(0);
+                // The user has only one  attempt to chooce an answer .
                 if (choiceAttempt < 1) {
                     if (choiceTarget === currentQuestion.correctAnswer) {
                         correctResult.style.display = 'block';
@@ -385,7 +351,6 @@ const getSportQuestion = () => {
                         score++;
                         plusScore.innerHTML = score;
                         choiceAttempt++;
-
                     } else {
                         incorrectResult.style.display = 'block';
                         event.target.style.color = '#9a031e';
@@ -399,10 +364,6 @@ const getSportQuestion = () => {
                     incorrectResult.style.display = 'none';
                     noChoice.style.display = 'block';
                 }
-
-
-
-
             });
         }
     } else {
@@ -411,17 +372,14 @@ const getSportQuestion = () => {
 
 };
 getSportQuestion();
+/** this function has same functionality as getSportQuestions function  with the difference being  that it  retrieves currentQuestion from movieQuestions array*/
 const getMovieQuestion = () => {
-
     if (currentMovieIndex < movieQuestions.length) {
         let currentQuestion = movieQuestions[currentMovieIndex];
-        // console.log(currentQuestion.choices);
         question.textContent = currentQuestion.question;
         currentCategory = movieQuestions;
-        //make sure previos choices not display//
         choiceAttempt = 0;
         choices.innerHTML = '';
-        //create  choicelist//
         for (let choice of currentQuestion.choices) {
             let choiceList = document.createElement('span');
             choiceList.classList.add('choice-btns');
@@ -437,36 +395,27 @@ const getMovieQuestion = () => {
                         score++;
                         plusScore.innerHTML = score;
                         choiceAttempt++;
-
                     } else {
                         incorrectResult.style.display = 'block';
                         event.target.style.color = '#9a031e';
                         noScore++;
                         minusScore.innerHTML = noScore;
                         choiceAttempt++;
-
                     }
                 } else if (choiceAttempt >= 1) {
                     correctResult.style.display = 'none';
                     incorrectResult.style.display = 'none';
                     noChoice.style.display = 'block';
                 }
-
-
-
-
             });
         }
-
     } else {
         checkIfFinished();
     }
 };
-
 getMovieQuestion();
-
+/** this function has same functionality as getSportQuestions and getMovieQuestions functions,  with the difference being  that it  retrieves currentQuestion from movieQuestions array*/
 const getMusicQuestion = () => {
-
     if (currentMusicIndex < musicQuestions.length) {
         let currentQuestion = musicQuestions[currentMusicIndex];
         // console.log(currentQuestion.choices);
@@ -491,14 +440,12 @@ const getMusicQuestion = () => {
                         score++;
                         plusScore.innerHTML = score;
                         choiceAttempt++;
-
                     } else {
                         incorrectResult.style.display = 'block';
                         event.target.style.color = '#9a031e';
                         noScore++;
                         minusScore.innerHTML = noScore;
                         choiceAttempt++;
-
                     }
                 } else if (choiceAttempt >= 1) {
                     correctResult.style.display = 'none';
@@ -506,21 +453,15 @@ const getMusicQuestion = () => {
                     noChoice.style.display = 'block';
                 }
             });
-
-
-
         }
     } else {
         checkIfFinished();
     }
 };
-
 getMusicQuestion();
-
-
+/**at the end of the game,  user can click restart btn, which restarts game */
 restartBtn.addEventListener('click', () => {
     playDiv.style.display = 'none';
-    // resumeDiv.style.display = 'none';
     playerName.textContent = '';
     userName.value = "";
     score = 0;
@@ -528,55 +469,21 @@ restartBtn.addEventListener('click', () => {
     plusScore.innerHTML = score;
     minusScore.innerHTML = noScore;
     playDiv.style.height = '30%';
-    // currentQuestionIndex = 0;
-    // currentMusicIndex = 0;
-    // currentMovieIndex = 0;
     questionWindow.style.display = 'flex';
     finished.style.display = 'none';
     choiceAttempt = 0;
     if (currentCategory === sportQuestions) {
         currentQuestionIndex = 0;
         getSportQuestion();
-        console.log(sportQuestions);
     } else if (currentCategory === musicQuestions) {
         currentMusicIndex = 0;
         getMusicQuestion();
-
-        console.log(musicQuestions);
     } else if (currentCategory === movieQuestions) {
         currentMovieIndex = 0;
         getMovieQuestion();
     }
-
-
 });
-
-musicBtn.addEventListener('click', () => {
-    currentQuestionIndex = 10;
-    currentMovieIndex = 10;
-    currentMusicIndex = 0;
-    score = 0;
-    noScore = 0;
-    plusScore.innerHTML = score;
-    minusScore.innerHTML = noScore;
-    playerName.textContent = userName.value;
-    gameBoard.style.display = 'flex';
-    mainBoard.style.display = 'none';
-    getMusicQuestion();
-});
-movieBtn.addEventListener('click', () => {
-    currentQuestionIndex = 10;
-    currentMusicIndex = 10;
-    currentMovieIndex = 0;
-    score = 0;
-    noScore = 0;
-    plusScore.innerHTML = score;
-    minusScore.innerHTML = noScore;
-    playerName.textContent = userName.value;
-    gameBoard.style.display = 'flex';
-    mainBoard.style.display = 'none';
-    getMovieQuestion();
-});
+/** this function handles to start   quiz game with sport category */
 sportBtn.addEventListener('click', () => {
     currentQuestionIndex = 0;
     currentMusicIndex = 10;
@@ -590,16 +497,40 @@ sportBtn.addEventListener('click', () => {
     mainBoard.style.display = 'none';
     getSportQuestion();
 });
-//this function checks if there is questions left or not//
-
-//next btn//
+/** this function handles to start   quiz game with movie category */
+movieBtn.addEventListener('click', () => {
+    currentQuestionIndex = 10;
+    currentMusicIndex = 10;
+    currentMovieIndex = 0;
+    score = 0;
+    noScore = 0;
+    plusScore.innerHTML = score;
+    minusScore.innerHTML = noScore;
+    playerName.textContent = userName.value;
+    gameBoard.style.display = 'flex';
+    mainBoard.style.display = 'none';
+    getMovieQuestion();
+});
+/** this function handles to start   quiz game with music category */
+musicBtn.addEventListener('click', () => {
+    currentQuestionIndex = 10;
+    currentMovieIndex = 10;
+    currentMusicIndex = 0;
+    score = 0;
+    noScore = 0;
+    plusScore.innerHTML = score;
+    minusScore.innerHTML = noScore;
+    playerName.textContent = userName.value;
+    gameBoard.style.display = 'flex';
+    mainBoard.style.display = 'none';
+    getMusicQuestion();
+});
+//add eventlistener to next btn
 for (let nextBtn of nextBtns) {
     nextBtn.addEventListener('click', () => {
-
         correctResult.style.display = 'none';
         incorrectResult.style.display = 'none';
         noChoice.style.display = 'none';
-
         if (currentQuestionIndex < sportQuestions.length) {
             currentQuestionIndex++;
             getSportQuestion();
@@ -614,4 +545,4 @@ for (let nextBtn of nextBtns) {
             checkIfFinished();
         }
     });
-};
+}
