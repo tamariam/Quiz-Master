@@ -194,6 +194,7 @@ footer {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
     width: 85%;
     height: 150px;
     background-color: #9f86c0;
@@ -462,11 +463,15 @@ label {
 
     }
 
-    .question-window,
+
     .play-div {
         width: 75%;
         height: 30%;
 
+    }
+
+    .question-window {
+        height: 200px;
     }
 
     .question-window h2 {
@@ -626,7 +631,7 @@ label {
     }
 
     .question-window h2 {
-        width: 90%;
+        width: 80%;
         font-size: 35px;
 
 

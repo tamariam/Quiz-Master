@@ -140,7 +140,7 @@ mainMenuBtn.addEventListener('click', () => {
     correctResult.style.display = 'none';
     incorrectResult.style.display = 'none';
     finished.style.display = 'none';
-    questionWindow.style.display = 'block';
+    questionWindow.style.display = 'flex';
 
 
 
@@ -550,7 +550,7 @@ restartBtn.addEventListener('click', () => {
     // currentQuestionIndex = 0;
     // currentMusicIndex = 0;
     // currentMovieIndex = 0;
-    questionWindow.style.display = 'block';
+    questionWindow.style.display = 'flex';
     finished.style.display = 'none';
     choiceAttempt = 0;
     if (currentCategory === sportQuestions) {
