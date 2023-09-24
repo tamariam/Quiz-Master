@@ -33,7 +33,6 @@ const incorrectResult = document.querySelector('.incorrect-result');
 const noChoice = document.querySelector('.no-choice');
 const finished = document.querySelector('.finished');
 const finishedText = document.querySelector('.finished-text');
-let currentCategory = sportQuestions;
 let currentQuestionIndex = 0;
 let currentMusicIndex = 0;
 let currentMovieIndex = 0;
@@ -130,7 +129,7 @@ themeOne.addEventListener('click', () => {
     document.body.style.backgroundColor = ' #ffcdb2';
     colorBoard.style.backgroundColor = '#fca311';
     gameBoard.style.backgroundColor = '#fca311';
-    borderChange(boxOne);
+    borderChange(themeOne);
 
 });
 themeTwo.addEventListener('click', () => {
@@ -138,14 +137,14 @@ themeTwo.addEventListener('click', () => {
     document.body.style.backgroundColor = '#cdb4db';
     colorBoard.style.backgroundColor = '#e76f51';
     gameBoard.style.backgroundColor = '#e76f51';
-    borderChange(boxTwo);
+    borderChange(themeTwo);
 });
 themeThree.addEventListener('click', () => {
     mainBoard.style.backgroundColor = '#bb3e03';
     document.body.style.backgroundColor = '#ffd670';
     colorBoard.style.backgroundColor = '#bb3e03';
     gameBoard.style.backgroundColor = '#bb3e03';
-    borderChange(boxThree);
+    borderChange(themeThree);
 
 });
 //main game
@@ -308,6 +307,7 @@ const musicQuestions = [
         correctAnswer: "a"
     }
 ];
+let currentCategory = sportQuestions;
 /**this function checks if there  left any questions or not */
 const checkIfFinished = () => {
     question.style.display = 'none';

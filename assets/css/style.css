@@ -163,7 +163,7 @@ footer {
 /* /styling main div */
 .main-div {
     width: 95vw;
-    height: 75vh;
+    min-height: 75vh;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
@@ -637,9 +637,5 @@ label {
 
     .username {
         width: 90%;
-    }
-
-    .main-div {
-        min-height: 100vh;
     }
 }
