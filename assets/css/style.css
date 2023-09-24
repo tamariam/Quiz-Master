@@ -41,6 +41,9 @@ body {
     height: 600px;
 }
 
+.btn-nav {
+    width: 100%;
+}
 
 /* give style to buttons they all have sam class */
 .game-menu .btn {
@@ -391,8 +394,8 @@ label {
 
 
 .next-btn,
-.restart-btn:hover {
-    background-color: #f5ebe0;
+.restart-btn :hover {
+    background-color: #0a9396;
 }
 
 .correct-result,

@@ -13,128 +13,126 @@
       content=" check knwoladge, quiz-game, sport, music, art"
     />
     <link rel="stylesheet" href="assets/css/style.css" />
-  
     <title>Quiz-Master</title>
-    
     <!-- font awasome js kit -->
-    <script src="https://kit.fontawesome.com/708a2505bb.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/708a2505bb.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-      <header>
-        
-        <h1 class="main-header">Quiz-Master    <i class="fa-regular fa-lightbulb"></i></h1>
-        <h2 >Test Your Knowladge here</h2>
-      </header>
-      <!--  main box for game -->
-      <div class="game-container">
-        <div class="game-menu  ">
-            <h1 class="menu-header">Main Menu</h1>
-        <!-- name div where user need to click to  start game -->
-        <button class="btn sport-btn">
-          Sport</button>
-          <button class="btn movie-btn">Movie</button>
-            <button class="btn music-btn ">Music</button>
-          <button   class="btn color-btn">Color Options</button>
-        
-        </div class="main-game">
-        <!-- this div will apear when user  clicks sports div and it will dislay game  -->
-        <div>
-            <!-- this div is used to display scores -->
-            <div class="scores-div"></div>
-        </div>
-        <!-- when user finish game this dive will display the result -->
+    <header>
+      <h1 class="main-header">
+        Quiz-Master <i class="fa-regular fa-lightbulb"></i>
+      </h1>
+      <h2>Test Your Knowladge here</h2>
+    </header>
+    <!--  main box for game -->
+    <main class="game-container">
+      <section class="game-menu">
+        <h2 class="menu-header">Main Menu</h2>
+        <!-- name btns where user need to click to  start game -->
+        <button class="btn sport-btn">Sport</button>
+        <button class="btn movie-btn">Movie</button>
+        <button class="btn music-btn">Music</button>
+        <button class="btn color-btn">Color Options</button>
+        <!-- this div is used to display scores -->
+        <div class="scores-div"></div>
+        <!-- when user finish game this div will display the result -->
         <div class="results-div"></div>
-      
-    </div>
-    <!-- div for  choose color btn, when user press choose color btn, this div will open -->
-    
-    
-    <div class="color-div">
+      </section>
+      <!-- section for  choose color , when user clicks choose color btn, this section will open -->
+      <section class="color-div">
         <header>
-            <h1 class="choose-color">Choose Color</h1>
+          <h2 class="choose-color">Choose Color</h2>
         </header>
         <button class="menu-btn colors-menu">Menu</button>
         <div id="box-1" class="box active"></div>
         <div id="box-2" class="box"></div>
         <div id="box-3" class="box"></div>
-    </div> 
-    <!--  when user cklicks sports-Btn this div will open, this will be main board for play game(sports-quiz) -->
-    <div class="main-div">
+      </section>
+      <!--  when user cklicks sports-Btn this div will open, this will be main board for play game(sports-quiz) -->
+      <div class="main-div">
         <button class="menu-btn menubtn-btn">Menu</button>
         <!-- this div will display a window asking user if he is ready to play or not -->
-        <div class="question-window">
-            <h2>Are You Ready?</h2>
-            <div class="btn-container">
+        <section class="question-window">
+          <h2>Are You Ready?</h2>
+          <div class="btn-container">
             <button class="window-btn yes-btn">Yes</button>
             <button class="window-btn no-btn">No</button>
+          </div>
+        </section>
+        <!-- when user clicks yes btn, this div will open -->
+        <div class="play-div">
+          <form id="form">
+            <label for="username">Create your username</label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="Your username"
+              required
+            />
+            <input type="submit" class="start-game-btn" value="Start Game" />
+          </form>
+          <!-- this is main container for game -->
+          <section class="play-game">
+            <h2 class="question">question</h2>
+            <div class="choices"></div>
+            <div class="finished">
+              <p class="finished-text">finished text</p>
+              <button class="restart-btn">restart game</button>
             </div>
-      </div>
-      <!-- when user clicks yes btn, this div will open -->
-      <div class="play-div">
-    <form id="form">
-        <label for="username">Create your username</label>
-         <input type="text" id="username"  name="username"   placeholder="Your username" required>
-        <input type="submit" class="start-game-btn" value="Start Game">
-    </form>
-    <!-- this is main container for game -->
-    <div class="play-game">
-        <p class="question"></p>
-    
-        <div class="choices"></div>
-        <div class="finished">
-            <p class="finished-text"></p>
-            <button class="restart-btn">restart game</button>
-        </div>
-         
-         <!-- this div will  display text if users answer was correct or incorrect -->
-         
-          <div class="correct-result">
-            <p >You got it right! Well done.</p> 
-            <button class='next-btn'>next</button>
+            <!-- this div will  display text if users answer was correct or incorrect -->
+            <div class="correct-result">
+              <p>You got it right! Well done.</p>
+              <button class="next-btn">next</button>
             </div>
             <div class="incorrect-result">
-            <p >`Oops, that's not quite right.</p>
-            <button class='next-btn'>next</button>
-            </div> 
+              <p>`Oops, that's not quite right.</p>
+              <button class="next-btn">next</button>
+            </div>
             <!-- this wil display if user try to choose answer more then one time -->
             <div class="no-choice">
-                <p >You have already made your choice</p>
-                <button class='next-btn'>next</button>
+              <p>You have already made your choice</p>
+              <button class="next-btn">next</button>
             </div>
-            
-            
-         </div>
-
-
-<!-- when user qlicks quit btn and then returns to same game, this div will asks user if wants to resume or restart  -->
-<!-- <div class="resume-div">
-    <button class="resume-btn">resume game</button>
-    <button class="restart-btn">restart game</button>
-</div> -->
-</div>
-<!-- this div display users name and its correct and incorrect answers -->
-<div class="user-score">
-    <p class="user-score-p user-name">Player:<span id="player-name"></span> </p>
-    <div class="scores-div">
-        <p class=" user-score-p  correct-answer">Correct : <span class="score plus-score">0</span></p>
-        <p class=" user-score-p  incorretc-answer">incorrect : <span class="score minus-score">0</span></p>
-    </div>
-
-</div>
-      </div>
-    
+          </section>
         </div>
-    
+        <!-- this div display users name and its correct and incorrect answers -->
+        <section class="user-score">
+          <h3 class="user-score-p user-name">
+            Player:<span id="player-name"></span>
+          </h3>
+          <div class="scores-div">
+            <p class="user-score-p correct-answer">
+              Correct : <span class="score plus-score">0</span>
+            </p>
+            <p class="user-score-p incorretc-answer">
+              incorrect : <span class="score minus-score">0</span>
+            </p>
+          </div>
+        </section>
+      </div>
+    </main>
+
     <footer>
-        <a href="https://www.linkedin.com/in/sopiko-abulidze-69a563251/" target="_blank" aria-label="my linkdin url">
-        <i class="fa-brands fa-linkedin"></i></a>
-        <a href="https://github.com/tamariam?tab=repositories" target="_blank" aria-label="my github url">
-        <i class="fa-brands fa-github"></i></a>
-
+      <a
+        href="https://www.linkedin.com/in/sopiko-abulidze-69a563251/"
+        target="_blank"
+        aria-label="my linkdin url"
+      >
+        <i class="fa-brands fa-linkedin"></i
+      ></a>
+      <a
+        href="https://github.com/tamariam?tab=repositories"
+        target="_blank"
+        aria-label="my github url"
+      >
+        <i class="fa-brands fa-github"></i
+      ></a>
     </footer>
-    
-
+    <p>&copy; Sopiko Abulidze</p>
     <script src="assets/js/script.js" defer></script>
-    
   </body>
 </html>
