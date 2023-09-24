@@ -133,7 +133,6 @@ footer {
     width: 120px;
     height: 120px;
     border-radius: 9px;
-
 }
 
 .active {
@@ -142,12 +141,10 @@ footer {
 
 #box-1 {
     background-color: #fca311;
-
 }
 
 #box-2 {
     background-color: #e76f51;
-
 }
 
 #box-3 {
@@ -221,10 +218,15 @@ footer {
 
 /* styling scores */
 .user-score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     visibility: hidden;
+
 }
 
-.user-score-h3 {
+.user-score-p {
     font-family: 'Acme', sans-serif;
     font-weight: 400;
     font-size: 20px;
@@ -238,7 +240,7 @@ footer {
 }
 
 .score {
-    color: #6a040f;
+    color: #0d1321;
     font-family: 'Oswald', 'sans-serif';
     font-weight: 700;
     font-size: 20px;
@@ -477,7 +479,7 @@ label {
         font-size: 20px;
     }
 
-    .user-score-p {
+    .user-score-h3 {
         font-size: 24px;
     }
 
@@ -599,7 +601,7 @@ label {
         font-size: 22px;
     }
 
-    .user-score-p {
+    .user-score-h3 {
         font-size: 27px;
     }
 

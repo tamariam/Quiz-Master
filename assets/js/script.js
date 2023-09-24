@@ -1,32 +1,32 @@
 //get elements//
-let boxOne = document.querySelector("#box-1");
-let boxTwo = document.querySelector("#box-2");
-let boxThree = document.querySelector('#box-3');
-let menuBtn = document.querySelector('.colors-menu');
-let mainMenuBtn = document.querySelector('.menubtn-btn');
-let yesBtn = document.querySelector('.yes-btn');
-let noBtn = document.querySelector('.no-btn');
-let mainBoard = document.querySelector('.game-menu');
-let colorBoard = document.querySelector('.color-section');
-let colorOptions = document.querySelector('.color-btn');
-let boxes = document.querySelectorAll('.box');
-let sportBtn = document.querySelector('.sport-btn');
-let gameBoard = document.querySelector('.main-div');
-let userScoresDiv = document.querySelector('.user-score');
-let questionWindow = document.querySelector('.question-window');
-let playDiv = document.querySelector('.play-div');
-let userName = document.querySelector('#username');
-let form = document.querySelector('#form');
-let startGameBtn = document.querySelector('.start-game-btn');
-let playerName = document.querySelector('#player-name');
-let movieBtn = document.querySelector('.movie-btn');
-let musicBtn = document.querySelector('.music-btn');
-let playGameDiv = document.querySelector('.play-game');
-let question = document.querySelector('.question');
-let choices = document.querySelector('.choices');
-let nextBtns = document.querySelectorAll('.next-btn');
-let plusScore = document.querySelector('.plus-score');
-let minusScore = document.querySelector('.minus-score');
+const boxOne = document.querySelector("#box-1");
+const boxTwo = document.querySelector("#box-2");
+const boxThree = document.querySelector('#box-3');
+const menuBtn = document.querySelector('.colors-menu');
+const mainMenuBtn = document.querySelector('.menubtn-btn');
+const yesBtn = document.querySelector('.yes-btn');
+const noBtn = document.querySelector('.no-btn');
+const mainBoard = document.querySelector('.game-menu');
+const colorBoard = document.querySelector('.color-section');
+const colorOptions = document.querySelector('.color-btn');
+const boxes = document.querySelectorAll('.box');
+const sportBtn = document.querySelector('.sport-btn');
+const gameBoard = document.querySelector('.main-div');
+const userScoresDiv = document.querySelector('.user-score');
+const questionWindow = document.querySelector('.question-window');
+const playDiv = document.querySelector('.play-div');
+const userName = document.querySelector('#username');
+const form = document.querySelector('#form');
+const startGameBtn = document.querySelector('.start-game-btn');
+const playerName = document.querySelector('#player-name');
+const movieBtn = document.querySelector('.movie-btn');
+const musicBtn = document.querySelector('.music-btn');
+const playGameDiv = document.querySelector('.play-game');
+const question = document.querySelector('.question');
+const choices = document.querySelector('.choices');
+const nextBtns = document.querySelectorAll('.next-btn');
+const plusScore = document.querySelector('.plus-score');
+const minusScore = document.querySelector('.minus-score');
 const resumeDiv = document.querySelector('.resume-div');
 const resumeBtn = document.querySelector('.resume-btn');
 const restartBtn = document.querySelector('.restart-btn');
@@ -155,25 +155,6 @@ mainMenuBtn.addEventListener('click', () => {
 
 });
 
-
-// resumeBtn.addEventListener('click', () => {
-//     resumeDiv.style.display = 'none';
-//     playGameDiv.style.display = 'block';
-//     console.log('clicked');
-//     if (currentCategory === sportQuestions) {
-
-//         getSportQuestion();
-
-//     } else if (currentCategory === musicQuestions) {
-
-//         getMusicQuestion();
-
-//     } else if (currentCategory === movieQuestions) {
-
-//         getMovieQuestion();
-
-//     }
-// });
 //add eventListeners to boxes to change color//
 boxOne.addEventListener('click', () => {
     mainBoard.style.backgroundColor = ' #fca311';
