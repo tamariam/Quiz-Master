@@ -1,9 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Acme&family=Oswald:wght@300;400;500;700&display=swap');
-/* 
-* {
-    margin: 0;
-    padding: 0;
-} */
 
 /* give styles to body */
 body {
@@ -15,8 +10,6 @@ body {
     font-family: 'Acme', sans-serif;
     font-weight: 400;
     background-color: #ffcdb2;
-
-
 }
 
 /* styling main container, set to to display flex because to center all items */
@@ -41,10 +34,6 @@ body {
     height: 600px;
 }
 
-.btn-nav {
-    width: 100%;
-}
-
 /* give style to buttons they all have sam class */
 .game-menu .btn {
     display: block;
@@ -59,7 +48,6 @@ body {
     color: #e9edc9;
     border: none;
     border-radius: 9px;
-
 }
 
 .game-menu .btn:hover {
@@ -71,7 +59,6 @@ body {
     font-size: 40px;
     align-items: Center;
     color: #001d3d;
-
 }
 
 header h2 {
@@ -107,11 +94,10 @@ footer {
     color: #fca311;
 }
 
-.color-div {
-
+/* styling color section */
+.color-section {
     width: 95vw;
     height: 70vh;
-    display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
@@ -119,9 +105,9 @@ footer {
     padding-bottom: 10px;
     display: none;
     gap: 5px;
-
 }
 
+/* give styles to menu btn */
 .menu-btn {
     border: none;
     padding: 5px 20px;
@@ -142,6 +128,7 @@ footer {
     background-color: #0a9396;
 }
 
+/* styling color boxes */
 .box {
     width: 120px;
     height: 120px;
@@ -165,7 +152,6 @@ footer {
 
 #box-3 {
     background-color: #bb3e03;
-
 }
 
 .box:hover {
@@ -175,13 +161,12 @@ footer {
 
 .choose-color {
     color: #ffffff;
-
 }
 
+/* /styling main div */
 .main-div {
     width: 95vw;
     height: 75vh;
-    display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
@@ -189,20 +174,18 @@ footer {
     padding-bottom: 10px;
     border-radius: 9px;
     display: none;
-
 }
 
+/* styling questions window and its elements where user is asked if he is ready or not */
 .question-window {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
     width: 85%;
     height: 150px;
     background-color: #9f86c0;
     border-radius: 15px;
-
 }
 
 .question-window h2 {
@@ -210,7 +193,6 @@ footer {
     font-family: 'Oswald', sans-serif;
     FONT-WEIGHT: 400;
     text-align: center;
-
 }
 
 .btn-container {
@@ -237,11 +219,12 @@ footer {
     background-color: #eae2b7;
 }
 
+/* styling scores */
 .user-score {
     visibility: hidden;
 }
 
-.user-score-p {
+.user-score-h3 {
     font-family: 'Acme', sans-serif;
     font-weight: 400;
     font-size: 20px;
@@ -265,9 +248,9 @@ footer {
     text-align: center;
 }
 
+/* styling play-div  and its elements */
 .play-div {
     width: 90%;
-    /* height: 33%; */
     background-color: #9f86c0;
     border-radius: 15px;
     display: none;
@@ -275,10 +258,7 @@ footer {
     justify-content: center;
     align-items: center;
     text-align: center;
-
 }
-
-
 
 #form {
 
@@ -293,7 +273,6 @@ footer {
 
 }
 
-
 #username {
     font-size: 18px;
     padding: 9px 0;
@@ -301,7 +280,6 @@ footer {
     border-radius: 9px;
     width: 70%;
     text-align: Center;
-
 }
 
 #username::placeholder {
@@ -321,7 +299,7 @@ label {
 }
 
 
-
+/*  give styles to start game btn */
 .start-game-btn {
     width: 120px;
     font-size: 18px;
@@ -340,6 +318,7 @@ label {
     background-color: #0a9396;
 }
 
+/* give styles to play-game section and its elements */
 .play-game {
     display: none;
 }
@@ -358,7 +337,6 @@ label {
     font-size: 20px;
     text-align: center;
     color: #0d1321;
-
 }
 
 .choices span {
@@ -368,13 +346,9 @@ label {
     text-align: center;
     color: #0d1321;
     cursor: pointer;
-
 }
 
-
-
-
-
+/* styling next and restart btns */
 .next-btn,
 .restart-btn {
     width: 130px;
@@ -386,12 +360,7 @@ label {
     font-size: 18px;
     font-family: 'Acme', sans-serif;
     font-weight: 400;
-
-
-
 }
-
-
 
 .next-btn,
 .restart-btn :hover {
@@ -410,14 +379,10 @@ label {
     color: #9a031e;
 }
 
-
-
-
 /* make site responsive for tablets */
 @media screen and (min-width: 768px) {
     .game-menu {
         padding-bottom: 18px;
-
     }
 
     .game-menu .btn {
@@ -443,7 +408,6 @@ label {
 
     .fa-brands {
         font-size: 38px;
-
     }
 
     h1 i {
@@ -463,14 +427,11 @@ label {
         text-align: center;
         width: 130px;
         padding-bottom: 9px;
-
     }
-
 
     .play-div {
         width: 75%;
         height: 30%;
-
     }
 
     .question-window {
@@ -480,8 +441,6 @@ label {
     .question-window h2 {
         font-size: 32px;
         letter-spacing: 1px;
-
-
     }
 
     .username {
@@ -496,14 +455,11 @@ label {
         width: 150px;
         font-size: 20px;
         font-weight: 500;
-
     }
 
     #form {
         margin-top: 15px;
-
     }
-
 
     #username {
         font-size: 20px;
@@ -513,16 +469,12 @@ label {
     label {
         margin-bottom: 10px;
         font-size: 22px;
-
     }
-
-
 
     .start-game-btn {
         padding: 6px 0;
         width: 130px;
         font-size: 20px;
-
     }
 
     .user-score-p {
@@ -536,15 +488,11 @@ label {
     .question {
 
         font-size: 22px;
-
-
     }
 
     .choices span {
 
         font-size: 20px;
-
-
     }
 
     .correct-result,
@@ -553,19 +501,13 @@ label {
     .finished {
 
         font-size: 20px;
-
     }
 
     .next-btn,
     .restart-btn {
         width: 150px;
         font-size: 20px;
-
-
-
-
     }
-
 }
 
 /* give responsive sizes  for desktop */
@@ -577,12 +519,10 @@ label {
     .game-menu {
         padding-bottom: 28px;
         border: 3px solid black;
-
     }
 
     .game-menu .btn {
         font-size: 24px;
-
     }
 
     .main-header {
@@ -598,13 +538,11 @@ label {
     }
 
     footer {
-        /* margin-bottom: 25px; */
         gap: 20px;
     }
 
     .fa-brands {
         font-size: 48px;
-
     }
 
     h1 i {
@@ -620,7 +558,6 @@ label {
     .main-div {
         width: 50vw;
         border: 3px solid black;
-
     }
 
     .choose-color {
@@ -636,9 +573,6 @@ label {
     .question-window h2 {
         width: 80%;
         font-size: 35px;
-
-
-
     }
 
     .btn-container {
@@ -648,10 +582,7 @@ label {
     .window-btn {
         width: 170px;
         font-size: 22px;
-
     }
-
-
 
     #username {
         font-size: 22px;
@@ -661,15 +592,11 @@ label {
     label {
 
         font-size: 24px;
-
     }
-
-
 
     .start-game-btn {
         width: 140px;
         font-size: 22px;
-
     }
 
     .user-score-p {
@@ -681,26 +608,18 @@ label {
     }
 
     .question {
-
         font-size: 24px;
-
-
     }
 
     .choices span {
-
         font-size: 22px;
-
-
     }
 
     .correct-result,
     .incorrect-result,
     .no-choice,
     .finished {
-
         font-size: 22px;
-
     }
 
     .next-btn,
@@ -708,10 +627,6 @@ label {
         width: 165px;
         font-size: 22px;
         text-transform: uppercase;
-
-
-
-
     }
 
     .play-div {
