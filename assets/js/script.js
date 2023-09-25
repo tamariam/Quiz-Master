@@ -1,3 +1,5 @@
+"use strict";
+
 //get global variables//
 const themeOne = document.querySelector("#box-1");
 const themeTwo = document.querySelector("#box-2");
