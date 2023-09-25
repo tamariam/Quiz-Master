@@ -97,7 +97,8 @@ The quiz game's footer includes links to my GitHub and LinkedIn profiles, as wel
 ## **Validator Testing**
 
 - HTML
-- No errors were found when passing through the official ( W3C )validator.
+
+  - No errors were found when passing through the official ( W3C )validator.
 
 - CSS
 
