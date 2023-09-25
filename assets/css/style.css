@@ -158,7 +158,7 @@ footer {
     color: #ffffff;
 }
 
-/* /styling main div */
+/* styling main div */
 .main-div {
     width: 95vw;
     min-height: 75vh;
@@ -297,7 +297,6 @@ label {
     color: #6a040f;
     font-weight: 700;
 }
-
 
 /*  give styles to start game btn */
 .start-game-btn {
@@ -627,8 +626,6 @@ label {
         font-size: 22px;
         text-transform: uppercase;
     }
-
-
 
     .username {
         width: 90%;

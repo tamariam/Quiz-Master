@@ -10,10 +10,10 @@ Welcome to Quiz-Master. I decide to create this game for peope who loves online 
 
 ## Target Audience
 
--Gamers
--Sport,Music and Movie Fans.
--Users who  are looking to expand their knowledge base in a fun way.
--Users who are looking for quick and enjoyable way to spend time.
+- Gamers
+- Sport,Music and Movie Fans.
+- Users who  are looking to expand their knowledge base in a fun way.
+- Users who are looking for quick and enjoyable way to spend time.
 
 ## Site Aim
 
@@ -31,7 +31,6 @@ Welcome to Quiz-Master. I decide to create this game for peope who loves online 
 
 ### Main Menu
 
-c
  Fully responsive Main menu  allow users to easyly navigate thorugh main page, and choose category which he/she wants to play or  just change the Color-theme.User can Choose a category with simply click on category name.
 
 ![main-menu!](./docs/screenshots/main%20menuu.png)
@@ -67,6 +66,7 @@ After the game finishes, a 'Finished' message will appear, indicating how many q
 ### choose color
 
 When users click the 'Choose Color' button on the main menu, they are allowed to select a color theme from a choice of three different themes.
+
 ![choose-color!](./docs/screenshots/choose%20color.png)
 
 ### Footer
@@ -82,15 +82,15 @@ The quiz game's footer includes links to my GitHub and LinkedIn profiles, as wel
 - I Tested that github and linkdin  links works on footer page.
 - I confirm that all Features  works without  problem.
 - I checked that score tracking system works correctly.
-  - I've tested each button to ensure they perform their designated tasks with precision and excellence.
+- I've tested each button to ensure they perform their designated tasks with precision and excellence.
   
-### Bugs
+## Bugs
   
-## Fixed Bugs
+### Fixed Bugs
 
 - The primary challenge I encountered during the development of this project was obtaining relevant questions for each category. Initially, I faced the issue of questions from one category appearing mixed with questions from other categories. To address this, I implemented a solution by setting the 'current question index' to 10, ensuring that only questions from the selected category are displayed. This adjustment helped maintain a consistent and category-specific quiz experience.For instance, when a user selects the 'Movie' category, in the 'getMovieQuestions' function, the question indexes for 'Sports' and 'Music' are both set to 10, while the 'Movie' question index is set to 0. This configuration ensures that only questions from the 'Movie' category are presented.
 
-## Unfixed Bugs
+### Unfixed Bugs
 
 - No unfixed bugs.
   
@@ -103,7 +103,7 @@ The quiz game's footer includes links to my GitHub and LinkedIn profiles, as wel
 ![css-validator!](./docs/screenshots/css%20validator.png)
 ![js-validator!](./docs/screenshots/js-validator.png)
 
-- ### accessibility
+### accessibility
 
 - I confirm that colors and fonts are checked through lighthouse testing and they are easy to read and accessible.
   ![lighthouse-testing mobile!](./docs/screenshots/mobile%20performance.png) ![lighthouse-testing desktop!](./docs/screenshots/desktop%20performance.png)
@@ -117,10 +117,9 @@ The quiz game's footer includes links to my GitHub and LinkedIn profiles, as wel
 ### Color Scheme
 
 - In my quiz game, the main theme prominently features bright and cheerful colors, symbolizing fun and entertainment
-- I create color palette using [Cooloers](https://coolors.co).
+- I create color palette using [Cooloers](https://coolors.co)
 - I used contrast-grid to check contrast between colors.
--
-- ![contrast-grid!](./docs/screenshots/colors.png)
+   ![contrast-grid!](./docs/screenshots/colors.png)
 
 ## **Deployment**
 

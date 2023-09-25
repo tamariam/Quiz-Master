@@ -1,5 +1,3 @@
-"use strict";
-
 //get global variables//
 const themeOne = document.querySelector("#box-1");
 const themeTwo = document.querySelector("#box-2");
@@ -147,7 +145,6 @@ themeThree.addEventListener('click', () => {
     colorBoard.style.backgroundColor = '#bb3e03';
     gameBoard.style.backgroundColor = '#bb3e03';
     borderChange(themeThree);
-
 });
 //main game
 //get sportQuestions Array
@@ -371,7 +368,6 @@ const getSportQuestion = () => {
     } else {
         checkIfFinished();
     }
-
 };
 getSportQuestion();
 /** this function has same functionality as getSportQuestions function  with the difference being  that it  retrieves currentQuestion from movieQuestions array*/
