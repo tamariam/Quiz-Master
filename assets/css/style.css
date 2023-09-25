@@ -177,7 +177,7 @@ footer {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 75%;
+    width: 90%;
     height: 150px;
     background-color: #9f86c0;
     border-radius: 15px;
@@ -255,13 +255,14 @@ footer {
     border-radius: 15px;
     display: none;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     text-align: center;
+    margin-top: 15px;
 }
 
 #form {
-    width: 75%;
+    width: 80%;
     display: Flex;
     flex-direction: column;
     font-family: 'Oswald', sans-serif;
@@ -429,6 +430,7 @@ label {
     }
 
     .question-window {
+        width: 75%;
         height: 200px;
     }
 
@@ -451,9 +453,9 @@ label {
         font-weight: 500;
     }
 
-    #form {
+    /* #form {
         margin-top: 15px;
-    }
+    } */
 
     #username {
         font-size: 20px;
