@@ -34,7 +34,7 @@ Welcome to Quiz-Master. I decide to create this game for peope who loves online 
 c
  Fully responsive Main menu  allow users to easyly navigate thorugh main page, and choose category which he/she wants to play or  just change the Color-theme.User can Choose a category with simply click on category name.
 
-![main-menu!](./docs/screenshots/main%20menu.png)
+![main-menu!](./docs/screenshots/main%20menuu.png)
 
 ## Question-Window
 
@@ -67,7 +67,7 @@ After the game finishes, a 'Finished' message will appear, indicating how many q
 ### choose color
 
 When users click the 'Choose Color' button on the main menu, they are allowed to select a color theme from a choice of three different themes.
-![choose-color!](./docs/screenshots/color.png)
+![choose-color!](./docs/screenshots/choose%20color.png)
 
 ### Footer
 
@@ -98,14 +98,13 @@ The quiz game's footer includes links to my GitHub and LinkedIn profiles, as wel
 
 - HTML-No errors were found when passing through the official ( W3C )validator.
 - CSS-No errors were found when passing through the official (Jigsaw) validator.
-- -Js No errors were found when passing through the official (jshint) validator.
+- Js  JSHint, the JavaScript validator, showed me an error mentioning that functions declared within loops referencing an outer scoped variable may lead to confusing semantics. I have checked it several times, and my game logic works just fine without any issues. As I have no time left to work on it, I will leave it for now and come back later for refactoring
   ![html-validator!](./docs/screenshots/html%20validator.png)
 ![css-validator!](./docs/screenshots/css%20validator.png)
-![js-validator!](./docs/screenshots/js%20validator.png)
+![js-validator!](./docs/screenshots/js-validator.png)
 
 - ### accessibility
 
--
 - I confirm that colors and fonts are checked through lighthouse testing and they are easy to read and accessible.
   ![lighthouse-testing mobile!](./docs/screenshots/mobile%20performance.png) ![lighthouse-testing desktop!](./docs/screenshots/desktop%20performance.png)
 
