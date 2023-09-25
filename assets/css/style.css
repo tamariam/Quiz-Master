@@ -177,7 +177,7 @@ footer {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 85%;
+    width: 75%;
     height: 150px;
     background-color: #9f86c0;
     border-radius: 15px;
@@ -255,13 +255,13 @@ footer {
     border-radius: 15px;
     display: none;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     text-align: center;
 }
 
 #form {
-
+    width: 75%;
     display: Flex;
     flex-direction: column;
     font-family: 'Oswald', sans-serif;
@@ -430,8 +430,8 @@ label {
     }
 
     .play-div {
-        width: 75%;
-        height: 30%;
+        width: 70%;
+        height: 35%;
     }
 
     .question-window {
@@ -560,6 +560,11 @@ label {
         border: 3px solid black;
     }
 
+    .play-div {
+        width: 90%;
+        height: 60%;
+    }
+
     .choose-color {
         font-size: 45px;
     }
@@ -629,9 +634,7 @@ label {
         text-transform: uppercase;
     }
 
-    .play-div {
-        width: 90%;
-    }
+
 
     .username {
         width: 90%;
