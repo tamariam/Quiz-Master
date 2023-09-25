@@ -362,11 +362,6 @@ label {
     font-weight: 400;
 }
 
-.next-btn,
-.restart-btn :hover {
-    background-color: #0a9396;
-}
-
 .correct-result,
 .incorrect-result,
 .no-choice,
@@ -562,7 +557,6 @@ label {
 
     .play-div {
         width: 90%;
-        height: 60%;
     }
 
     .choose-color {
@@ -576,7 +570,7 @@ label {
     }
 
     .question-window h2 {
-        width: 80%;
+        width: 85%;
         font-size: 35px;
     }
 
