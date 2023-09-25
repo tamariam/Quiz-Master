@@ -48,12 +48,12 @@ After clicking the 'Yes' button on the question window, another window will open
 
 ### Game
 
-- After creating a username and pressing 'Enter' or clicking the 'Start Game' button, the game will commence. The questions presented will depend on the category chosen by the user.
-- it has score tracking system, chich counts correct and incorrect answers.
-- when user creates username its username displays on screen .
-- incorrect and corretc answers have relevant feedback text .
-- when user clicks next btn, next question will display ..
-- when user clicks to Menu btn, it will return to Main Menu.
+- After creating a username and pressing 'Enter' or clicking the 'Start Game' button, the game will begin. The questions presented will be determined by the category selected by the user.
+- It includes a score tracking system that tallies both correct and incorrect answers.
+- When a user creates a username, it will be displayed on the screen.
+- Incorrect and correct answers are accompanied by relevant feedback text.
+- When the user clicks the 'Next' button, the next question will be displayed.
+- When the user clicks the 'Menu' button, it will return to the Main Menu.
 
   ![game!](./docs/screenshots/gamee.png)
 
@@ -98,7 +98,7 @@ The quiz game's footer includes links to my GitHub and LinkedIn profiles, as wel
 
 - HTML-No errors were found when passing through the official ( W3C )validator.
 - CSS-No errors were found when passing through the official (Jigsaw) validator.
-- Js JSHint, the JavaScript validator, showed me an error mentioning that functions declared within loops referencing an outer scoped variable may lead to confusing semantics. I have checked it several times, and my game logic works just fine without any issues. As I have no time left to work on it, I will leave it for now and come back later for refactoring
+- Js -No errors were found when passing through the official (Jshint) validator.
   ![html-validator!](./docs/screenshots/html%20validator.png)
   ![css-validator!](./docs/screenshots/css%20validator.png)
   ![js-validator!](./docs/screenshots/js-validator.png)
