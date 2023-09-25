@@ -99,9 +99,6 @@ The quiz game's footer includes links to my GitHub and LinkedIn profiles, as wel
 - HTML-No errors were found when passing through the official ( W3C )validator.
 - CSS-No errors were found when passing through the official (Jigsaw) validator.
 - Js -No errors were found when passing through the official (Jshint) validator.
-  ![html-validator!](./docs/screenshots/html%20validator.png)
-  ![css-validator!](./docs/screenshots/css%20validator.png)
-  ![js-validator!](./docs/screenshots/js-validator.png)
 
 ### accessibility
 
