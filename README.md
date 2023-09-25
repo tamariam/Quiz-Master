@@ -96,9 +96,23 @@ The quiz game's footer includes links to my GitHub and LinkedIn profiles, as wel
 
 ## **Validator Testing**
 
-- HTML-No errors were found when passing through the official ( W3C )validator.
-- CSS-No errors were found when passing through the official (Jigsaw) validator.
-- Js -No errors were found when passing through the official (Jshint) validator.
+- HTML
+- No errors were found when passing through the official ( W3C )validator.
+
+- CSS
+
+  - No errors were found when passing through the official (Jigsaw) validator.
+
+- Js
+
+  - No errors were found when passing through the official (Jshint) validator.
+
+- The following metrics were returned:
+- There are 23 functions in this file.
+- Function with the largest signature take 1 arguments, while the median is 0.
+- Largest function has 18 statements in it, while the median is 11.
+
+The most complex function has a cyclomatic complexity value of 4 while the median is 2.
 
 ### accessibility
 
